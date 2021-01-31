@@ -1,16 +1,43 @@
 import sqlite3
 
-conn = sqlite3.connect("bible_kjv.db")
 
-cursor = conn.cursor()
+def show_verses(book_id, chapter_id):
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
-cursor.execute('''SELECT * FROM t_kjv
-                WHERE b = 1 AND c = 1''')
+    cursor = conn.cursor()
 
-temp = cursor.fetchall()
-print("\nGenesis 1\n")
-for x in temp:
-    print(f"Verse {x[3]}: {x[4]}")
+    book_id += 1
+    book_id = str(book_id)
 
-conn.commit()
-conn.close()
+    if type(chapter_id) is not str:
+        chapter_id = str(chapter_id)
+
+    cursor.execute(f'''SELECT * FROM t_kjv
+                    WHERE b = {book_id} AND c = {chapter_id}''')
+
+    selected_verses = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+
+    return selected_verses
+
+
+def chapter_list(book_id):
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
+
+    cursor = conn.cursor()
+
+    book_id += 1
+    book_id = str(book_id)
+
+    cursor.execute(f'''SELECT c FROM t_kjv
+                       WHERE b = {book_id}
+                       GROUP BY c''')
+
+    chapter_count = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+
+    return chapter_count

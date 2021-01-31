@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>472</width>
+    <height>485</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Prototype</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="Bible.png">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="text">
+        <string>Choose a book and chapter</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::AutoText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QComboBox" name="Book">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="toolTip">
+        <string>Books of The Bible</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Genesis</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Exodus</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Leviticus</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Numbers</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Deuteronomy</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Joshua</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Judges</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ruth</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Samuel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Samuel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Kings</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Kings</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Chronicles</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Chronicles</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ezra</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nehemiah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Esther</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Job</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Psalms</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Proverbs</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ecclesiastes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Song of Solomon</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Isaiah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Jeremiah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Lamentations</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ezekiel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Daniel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hosea</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Joel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Amos</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Obadiah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Jonah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Micah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nahum</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Habakkuk</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Zephaniah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Haggai</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Zechariah</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Malachi</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Matthew</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mark</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Luke</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>John</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Acts</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Romans</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Corinthians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Corinthians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Galatians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ephesians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Philippians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Colossians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Thessalonians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Thessalonians</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Timothy</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Timothy</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Titus</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Philemon</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hebrews</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>James</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 Peter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 Peter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 John</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2 John</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3 John</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Jude</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Revelation</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="Chapter">
+       <property name="toolTip">
+        <string>Chapters of the respective book</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QPushButton" name="prevChapter">
+       <property name="toolTip">
+        <string>Previous chapter of the book</string>
+       </property>
+       <property name="text">
+        <string>Previous</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="showVerses">
+       <property name="toolTip">
+        <string>Shows the verses of the selected book and chapter</string>
+       </property>
+       <property name="toolTipDuration">
+        <number>-1</number>
+       </property>
+       <property name="text">
+        <string>Get verses</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nextChapter">
+       <property name="toolTip">
+        <string>Next chapter of the book</string>
+       </property>
+       <property name="text">
+        <string>Next</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>440</width>
+        <height>346</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="versesLabel">
+         <property name="text">
+          <string>Your verses will be show here...</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
