@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Second</class>
+ <widget class="QMainWindow" name="Second">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>549</width>
+    <height>410</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Second</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QComboBox{
+	background-color: rgba(193, 211, 254, 1);
+}
+
+QPushButton{
+	background-color: rgba(171, 196, 255, 1);
+	border-radius: 60px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="nextChapter">
+    <property name="geometry">
+     <rect>
+      <x>319</x>
+      <y>142</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Next chapter of the book</string>
+    </property>
+    <property name="text">
+     <string>Next</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="showVerses">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>240</y>
+      <width>161</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Shows the verses of the selected book and chapter</string>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="text">
+     <string>Get verses</string>
+    </property>
+    <property name="default">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>549</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionTest_1"/>
+    <addaction name="actionTest_2"/>
+    <addaction name="actionTest_3"/>
+    <addaction name="separator"/>
+    <addaction name="actionTest_4"/>
+    <addaction name="actionTest_5"/>
+   </widget>
+   <widget class="QMenu" name="menuSimply_Checking">
+    <property name="title">
+     <string>Simply Checking</string>
+    </property>
+   </widget>
+   <addaction name="menuMenu"/>
+   <addaction name="menuSimply_Checking"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionTest_1">
+   <property name="text">
+    <string>Test 1</string>
+   </property>
+  </action>
+  <action name="actionTest_2">
+   <property name="text">
+    <string>Test 2</string>
+   </property>
+  </action>
+  <action name="actionTest_3">
+   <property name="text">
+    <string>Test 3</string>
+   </property>
+  </action>
+  <action name="actionTest_4">
+   <property name="text">
+    <string>Test 4</string>
+   </property>
+  </action>
+  <action name="actionTest_5">
+   <property name="text">
+    <string>Test 5</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
