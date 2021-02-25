@@ -12,6 +12,7 @@ class MainWindow(qtw.QMainWindow):
     # class MainWindow(qtw.QWidget):
     stop_signal = qtc.pyqtSignal()
 
+    # docs
     def __init__(self):
         super().__init__()  # avoid code redundancy
 
