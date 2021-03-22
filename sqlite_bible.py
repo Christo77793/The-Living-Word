@@ -1,5 +1,6 @@
 import sqlite3
 
+# Stores the Bible book's name and it's respective count number
 book_list = [(1, "Genesis"), (2, "Exodus"), (3, "Leviticus"), (4, "Numbers"), (5, "Deuteronomy"), (6, "Joshua"),
              (7, "Judges"), (8, "Ruth"), (9, "1 Samuel"), (10, "2 Samuel"), (11, "1 Kings"), (12, "2 Kings"),
              (13, "1 Chronicles"), (14, "2 Chronicles"), (15, "Ezra"), (16, "Nehemiah"), (17, "Esther"), (18, "Job"),
@@ -12,12 +13,21 @@ book_list = [(1, "Genesis"), (2, "Exodus"), (3, "Leviticus"), (4, "Numbers"), (5
              (55, "2 Timothy"), (56, "Titus"), (57, "Philemon"), (58, "Hebrews"), (59, "James"), (60, "1 Peter"),
              (61, "2 Peter"), (62, "1 John"), (63, "2 John"), (64, "3 John"), (65, "Jude"), (66, "Revelation")]
 
+# Stores the list of Bible promises
 bible_promises = [["Job", 8, 7], ["1 Chronicles", 16, 34], ["James", 1, 17],
                   ["Psalms", 34, 8], ["Genesis", 28, 15], ["Isaiah", 41, 10],
                   ["Revelation", 3, 8], ["Haggai", 2, 19], ["Psalms", 50, 15]]
 
 
 def show_verses(book_id, chapter_id, translation_filter):
+    '''
+    Function to show the verses from the provided book name, chapter number and the selected translation
+
+    :parameter: book_id -> Contains the book name's index number
+    :parameter: chapter_id -> Contains the chapter number
+    :parameter: translation_filter -> Contains the translation's index
+    :return:
+    '''
     conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
@@ -26,18 +36,23 @@ def show_verses(book_id, chapter_id, translation_filter):
     book_id = str(book_id)
 
     if type(chapter_id) is not str:
-        chapter_id = str(chapter_id)
+        chapter_id = str(chapter_id)  # converting to string
 
     if translation_filter == "KJV":
         selected_translation = "t_kjv"
+
     elif translation_filter == "ASV":
         selected_translation = "t_asv"
+
     elif translation_filter == "BBE":
         selected_translation = "t_bbe"
+
     elif translation_filter == "WBT":
         selected_translation = "t_wbt"
+
     elif translation_filter == "YLT":
         selected_translation = "t_ylt"
+
     else:  # DARBY
         selected_translation = "t_dby"
 
@@ -53,6 +68,11 @@ def show_verses(book_id, chapter_id, translation_filter):
 
 
 def chapter_list(book_id):
+    '''
+    Function to return the number of chapters in a book
+    :parameter: book_id -> Contains the book name's index number
+    '''
+
     conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
@@ -73,6 +93,13 @@ def chapter_list(book_id):
 
 
 def daily_verses(book_id, chapter_id, verse_id):
+    '''
+    Function to show the verses from the provided book name, chapter number and the selected verse
+
+    :parameter: book_id -> Contains the book name's index number
+    :parameter: chapter_id -> Contains the chapter number
+    :parameter: verse_id -> Contains the verse number
+    '''
     conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
