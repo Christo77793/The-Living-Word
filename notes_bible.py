@@ -160,7 +160,7 @@ class NotesWindow(Qtw.QMainWindow):
 
         dialog_ = Qtw.QMessageBox(self)
         dialog_.setText(message)
-        # dialog_.setIcon(Qtw.QMessageBox.Critical)
+        dialog_.setIcon(Qtw.QMessageBox.Critical)
         dialog_.show()
 
     def change_font(self, style, changed):
