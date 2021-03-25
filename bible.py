@@ -14,6 +14,8 @@ import cgitb
 cgitb.enable(format='text')
 
 
+# customContextMenuRequested
+
 # noinspection PyMethodMayBeStatic,PyAttributeOutsideInit
 class MainWindow(Qtw.QMainWindow):
     stop_signal = Qtc.pyqtSignal()
