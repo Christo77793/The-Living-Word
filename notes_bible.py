@@ -21,7 +21,7 @@ class NotesWindow(Qtw.QMainWindow):
         uic.loadUi(r"UI\Bible Notes.ui", self)
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images\logo 1.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_notes.png"))
 
         self.show()
 
@@ -29,15 +29,35 @@ class NotesWindow(Qtw.QMainWindow):
 
         self.path = ""  # stores the current file's path
 
+        # initial values for the bold, italic, and underline buttons to represent their active state
         self.changed_bold_value = False
         self.changed_italic_value = False
         self.changed_underline_value = False
 
-        note_area = self.findChild(Qtw.QPlainTextEdit, "noteArea")
-
+        # Bold
         self.boldButton.clicked.connect(lambda: self.change_font("Bold", self.changed_bold_value))
+
+        # Italic
         self.italicButton.clicked.connect(lambda: self.change_font("Italic", self.changed_italic_value))
+
+        # Underline
         self.underlineButton.clicked.connect(lambda: self.change_font("Underline", self.changed_underline_value))
+
+        # Font Selection
+
+        # Font Combo
+        font_button = self.findChild(Qtw.QFontComboBox, "changeFontButton")
+        font_button.currentFontChanged.connect(self.noteArea.setCurrentFont)  # Set the combo box to the current font
+
+        available_font_sizes = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18, 24, 36, 48, 64, 72, 96, 144, 288]
+
+        # Font Size
+        font_size_button = self.findChild(Qtw.QComboBox, "changeFontSizeButton")
+        font_size_button.addItems([str(size) for size in available_font_sizes])  # Loop through available sizes and add them
+
+        font_size_button.setCurrentIndex(8)
+
+        font_size_button.currentIndexChanged.connect(lambda size: self.noteArea.setFontPointSize(int(available_font_sizes[size])))
 
         # File Actions
 
@@ -56,16 +76,16 @@ class NotesWindow(Qtw.QMainWindow):
         save_as_action.setShortcut(Qtg.QKeySequence.SaveAs)
         save_as_action.triggered.connect(self.save_text_as)
 
-        # Quick Acess
+        # Quick Access
 
         # Undo
         undo_button = self.findChild(Qtw.QPushButton, "undoButton")
-        undo_button.clicked.connect(note_area.undo)
+        undo_button.clicked.connect(self.noteArea.undo)
         undo_button.setShortcut(Qtg.QKeySequence.Undo)
 
         # Redo
         redo_button = self.findChild(Qtw.QPushButton, "redoButton")
-        redo_button.clicked.connect(note_area.redo)
+        redo_button.clicked.connect(self.noteArea.redo)
         redo_button.setShortcut(Qtg.QKeySequence.Redo)
 
     def open_file(self):
@@ -165,48 +185,59 @@ class NotesWindow(Qtw.QMainWindow):
 
     def change_font(self, style, changed):
         '''
-        Function to change between Bold, Italic and Underline
+        Function to select and de-select font styles of Bold, Italic and Underline
         '''
-        note_area = self.findChild(Qtw.QPlainTextEdit, "noteArea")
+
+        # Checking which to style to turn on/off
 
         if style == "Bold":
 
             if not changed:
                 self.changed_bold_value = True
-                bold_font = Qtg.QFont()
-                bold_font.setBold(True)
-                note_area.setFont(bold_font)
+
+                # changing button color of bold to show it's active
+                self.boldButton.setStyleSheet("QPushButton{ background-color: rgb(120, 141, 254); } QPushButton:hover{ background-color: rgb(152, 168, 255); }")
+                self.noteArea.setFontWeight(Qtg.QFont.Bold)
             else:
                 self.changed_bold_value = False
-                bold_font = Qtg.QFont()
-                bold_font.setBold(False)
-                note_area.setFont(bold_font)
+
+                # changing button color of bold to show it's not active
+                self.boldButton.setStyleSheet("QPushButton{ background-color: rgba(171, 196, 255, 1); } QPushButton:hover{ background-color: rgb(163, 187, 243); }")
+                self.noteArea.setFontWeight(Qtg.QFont.Normal)
 
         if style == "Italic":
 
             if not changed:
                 self.changed_italic_value = True
-                italic_font = Qtg.QFont()
-                italic_font.setItalic(True)
-                note_area.setFont(italic_font)
+
+                # changing button color of italic to show it's active
+                self.italicButton.setStyleSheet("QPushButton{ background-color: rgb(120, 141, 254); } QPushButton:hover{ background-color: rgb(152, 168, 255); }")
+
+                self.noteArea.setFontItalic(True)
             else:
                 self.changed_italic_value = False
-                italic_font = Qtg.QFont()
-                italic_font.setItalic(False)
-                note_area.setFont(italic_font)
+
+                # changing button color of italic to show it's not active
+                self.italicButton.setStyleSheet("QPushButton{ background-color: rgba(171, 196, 255, 1); } QPushButton:hover{ background-color: rgb(163, 187, 243); }")
+
+                self.noteArea.setFontItalic(False)
 
         if style == "Underline":
 
             if not changed:
                 self.changed_underline_value = True
-                underline_font = Qtg.QFont()
-                underline_font.setUnderline(True)
-                note_area.setFont(underline_font)
+
+                # changing button color of underline to show it's active
+                self.underlineButton.setStyleSheet("QPushButton{ background-color: rgb(120, 141, 254); } QPushButton:hover{ background-color: rgb(152, 168, 255); }")
+
+                self.noteArea.setFontUnderline(True)
             else:
                 self.changed_underline_value = False
-                underline_font = Qtg.QFont()
-                underline_font.setUnderline(False)
-                note_area.setFont(underline_font)
+
+                # changing button color of underline to show it's not active
+                self.underlineButton.setStyleSheet("QPushButton{ background-color: rgba(171, 196, 255, 1); } QPushButton:hover{ background-color: rgb(163, 187, 243); }")
+
+                self.noteArea.setFontUnderline(False)
 
 
 if __name__ == "__main__":
