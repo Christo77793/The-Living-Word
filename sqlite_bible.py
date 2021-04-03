@@ -19,14 +19,13 @@ bible_promises = [["Job", 8, 7], ["1 Chronicles", 16, 34], ["James", 1, 17],
                   ["Revelation", 3, 8], ["Haggai", 2, 19], ["Psalms", 50, 15]]
 
 
-def show_verses(book_id, chapter_id, translation_filter):
+def show_verses(book_id, chapter_id, translation_filter, verse_id=""):
     '''
     Function to show the verses from the provided book name, chapter number and the selected translation
 
     :parameter: book_id -> Contains the book name's index number
     :parameter: chapter_id -> Contains the chapter number
     :parameter: translation_filter -> Contains the translation's index
-    :return:
     '''
     conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
@@ -56,10 +55,19 @@ def show_verses(book_id, chapter_id, translation_filter):
     else:  # DARBY
         selected_translation = "t_dby"
 
-    cursor.execute(f'''SELECT * FROM {selected_translation}
+    if not verse_id:
+        cursor.execute(f'''SELECT * FROM {selected_translation}
                     WHERE b = {book_id} AND c = {chapter_id}''')
 
-    selected_verses = cursor.fetchall()
+        selected_verses = cursor.fetchall()
+    else:
+        if type(verse_id) is not str:
+            verse_id = str(verse_id)  # converting to string
+
+        cursor.execute(f'''SELECT * FROM {selected_translation}
+                            WHERE b = {book_id} AND c = {chapter_id} and v = {verse_id}''')
+
+        selected_verses = cursor.fetchall()
 
     conn.commit()
     conn.close()
