@@ -281,7 +281,7 @@ class MainWindow(Qtw.QMainWindow):
         Function to update the chapter combobox with different Bible books
         '''
 
-        book_name = self.Book.currentIndex()
+        book_name = self.Book.currentIndex()  # index value of the book name
 
         chapters_combo_box = self.findChild(Qtw.QComboBox, "Chapter")
         chapters_combo_box.clear()  # clear the current list
@@ -296,6 +296,7 @@ class MainWindow(Qtw.QMainWindow):
     def bible_promise_function(self, verse):
         '''
         Function that takes value from the QThread class to show a Biblical Promise
+
         :parameter: verse -> Promise to show
         '''
 
@@ -324,10 +325,6 @@ class MainWindow(Qtw.QMainWindow):
         clear_button = context_menu_option.addAction("Clear")
         clear_button.triggered.connect(lambda: self.versesLabel.setText(clear_text))
 
-        # # Copy
-        # copy_text = context_menu_option.addAction("Copy")
-        # copy_text.triggered.connect(lambda: self.versesLabel.copy)
-
         cursor = Qtg.QCursor()
         context_menu_option.exec_(cursor.pos())
 
@@ -352,7 +349,7 @@ class MainWindow(Qtw.QMainWindow):
         '''
 
         promises_instance = self.p_instance = MyThread()
-        self.stop_signal.connect(promises_instance.stop)  # Stopping Bible promise function when app ends.2
+        self.stop_signal.connect(promises_instance.stop)  # Stopping the Bible promise function when app ends
 
 
 # noinspection PyMethodMayBeStatic

@@ -101,6 +101,7 @@ def daily_verses(book_id, chapter_id, verse_id):
 def chapter_list(book_id):
     '''
     Function to return the number of chapters in a book
+
     :parameter: book_id -> Contains the book name's index number
     '''
 
@@ -126,8 +127,9 @@ def chapter_list(book_id):
 def verse_list(book_id, chapter_id):
     '''
         Function to return the number of verses in a chapter
+
         :parameter: book_id -> Contains the book name's index number
-        :parameter: book_id -> Contains the chapter number's index number
+        :parameter: chapter_id -> Contains the chapter number's index number
         '''
 
     conn = sqlite3.connect(r"Bible Database\bible_database.db")
@@ -155,8 +157,10 @@ def verse_list(book_id, chapter_id):
 def select_verse(book_id, chapter_id, verse_id):
     '''
     Function to return the number of chapters in a book
+
     :parameter: book_id -> Contains the book name's index number
-    :parameter: book_id -> Contains the chapter number's index number
+    :parameter: chapter_id -> Contains the chapter number's index number
+    :parameter: verse_id -> Contains the verse number's index number
     '''
 
     conn = sqlite3.connect(r"Bible Database\bible_database.db")

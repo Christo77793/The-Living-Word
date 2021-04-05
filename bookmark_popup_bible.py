@@ -33,11 +33,11 @@ class BookMarkPopUp(Qtw.QMainWindow):
         chapter_number = self.findChild(Qtw.QComboBox, "chapterNumber")
         chapter_number.setCurrentIndex(chapter)
         self.update_verse_list()  # Count verses of the first chapter of the first book
-        chapter_number.currentIndexChanged.connect(self.update_verse_list)
+        chapter_number.currentIndexChanged.connect(self.update_verse_list)  # Automatically update verse count
 
         verse_number = self.findChild(Qtw.QComboBox, "verseNumber")
         self.show_selected_verse()  # Show the selected verse text of the selected book, chapter and verse
-        verse_number.currentIndexChanged.connect(self.show_selected_verse)
+        verse_number.currentIndexChanged.connect(self.show_selected_verse)  # Automatically display selected verse
 
         translation_name = self.findChild(Qtw.QComboBox, "translationName")
         translation_name.setCurrentIndex(translation)
@@ -45,9 +45,10 @@ class BookMarkPopUp(Qtw.QMainWindow):
         add_bookmark = self.findChild(Qtw.QPushButton, "addBookMark")
         add_bookmark.clicked.connect(self.bookmark_verses)
 
-        # show_bookmarks()
-
     def bookmark_verses(self):
+        '''
+        Function to add the selected book name, chapter number, verse number, verse text and translation name to the bookmarked_database file
+        '''
 
         # Book name
         book_name = self.bookName.currentText()
