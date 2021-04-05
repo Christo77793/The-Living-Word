@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d21fd20d-8e36-4731-af25-2b84295cf83f" name="Default Changelist" comment="Merge branch 'master' of https://github.com/Christo77793/The-Bible&#10;&#10;# Conflicts:&#10;#&#9;.idea/The Bible.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;bible.py&#10;#&#9;sqlite_bible.py&#10;#&#9;venv/Lib/site-packages/PyQt5-5.15.2.dist-info/RECORD&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/Qt3DAnimation.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/Qt3DCore.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/Qt3DExtras.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/Qt3DInput.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/Qt3DLogic.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/Qt3DRender.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtCore.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtDBus.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtGui.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtNetwork.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtOpenGL.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtPrintSupport.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtSql.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtTest.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtWidgets.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/QtXml.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/__init__.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5-stubs/sip.pyi&#10;#&#9;venv/Lib/site-packages/PyQt5_sip-12.8.1.dist-info/RECORD&#10;#&#9;venv/Lib/site-packages/PyQt5_sip-12.8.1.dist-info/WHEEL&#10;#&#9;venv/Scripts/Activate.ps1&#10;#&#9;venv/Scripts/activate&#10;#&#9;venv/Scripts/activate.bat&#10;#&#9;venv/Scripts/pip.exe&#10;#&#9;venv/Scripts/pip3.exe&#10;#&#9;venv/Scripts/pylupdate5.exe&#10;#&#9;venv/Scripts/pyrcc5.exe&#10;#&#9;venv/Scripts/python.exe&#10;#&#9;venv/Scripts/pythonw.exe&#10;#&#9;venv/Scripts/pyuic5.exe&#10;#&#9;venv/pyvenv.cfg">
-      <change beforePath="$PROJECT_DIR$/.idea/The Bible.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/The Bible.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/logo 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Bible Design.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Bible Design.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/Bible Notes.ui" beforeDir="false" afterPath="$PROJECT_DIR$/UI/Bible Notes.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bible.py" beforeDir="false" afterPath="$PROJECT_DIR$/bible.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlite_bible.py" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite_bible.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +35,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../labelImg-master" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.bible">
@@ -49,6 +52,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bible.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bookmark_verses_bible" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="The Bible" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\Projects\Python Projects\The Living Word\bookmark_verses_bible.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,6 +105,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.bible" />
+        <item itemvalue="Python.bookmark_verses_bible" />
         <item itemvalue="Python.notes_bible" />
       </list>
     </recent_temporary>
@@ -110,6 +135,16 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

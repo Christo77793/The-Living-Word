@@ -54,12 +54,10 @@
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
-	background-color: rgba(171, 196, 255, 1);
 	border-radius: 15px;
 }
 
 QPushButton:hover{
-	background-color: rgb(163, 187, 243);
 	border-radius: 15px;
 }</string>
       </property>
@@ -119,7 +117,7 @@ QPushButton:hover{
            <number>5</number>
           </property>
           <property name="horizontalSpacing">
-           <number>10</number>
+           <number>15</number>
           </property>
           <property name="verticalSpacing">
            <number>5</number>
@@ -152,41 +150,21 @@ QPushButton:hover{
             <property name="toolTip">
              <string>Bold</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	background-color: rgba(171, 196, 255, 1);
+}
+
+QPushButton:hover{
+	background-color: rgb(163, 187, 243);
+}</string>
+            </property>
             <property name="text">
              <string>B</string>
             </property>
            </widget>
           </item>
           <item row="0" column="2">
-           <widget class="QPushButton" name="italicButton">
-            <property name="minimumSize">
-             <size>
-              <width>45</width>
-              <height>45</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>45</width>
-              <height>45</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Goudy Old Style</family>
-              <pointsize>11</pointsize>
-              <italic>true</italic>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>Italic</string>
-            </property>
-            <property name="text">
-             <string>I</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
            <widget class="QPushButton" name="underlineButton">
             <property name="minimumSize">
              <size>
@@ -210,22 +188,31 @@ QPushButton:hover{
             <property name="toolTip">
              <string>Underline</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	background-color: rgba(171, 196, 255, 1);
+}
+
+QPushButton:hover{
+	background-color: rgb(163, 187, 243);
+}</string>
+            </property>
             <property name="text">
              <string>U</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="changefontButton">
+          <item row="0" column="1">
+           <widget class="QPushButton" name="italicButton">
             <property name="minimumSize">
              <size>
-              <width>155</width>
+              <width>45</width>
               <height>45</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>155</width>
+              <width>45</width>
               <height>45</height>
              </size>
             </property>
@@ -233,19 +220,67 @@ QPushButton:hover{
              <font>
               <family>Goudy Old Style</family>
               <pointsize>11</pointsize>
+              <italic>true</italic>
              </font>
+            </property>
+            <property name="toolTip">
+             <string>Italic</string>
             </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
-	background-color: rgb(7, 153, 254);
+	background-color: rgba(171, 196, 255, 1);
 }
 
 QPushButton:hover{
-	background-color: rgb(6, 144, 235);
+	background-color: rgb(163, 187, 243);
 }</string>
             </property>
             <property name="text">
-             <string>Change Font</string>
+             <string>I</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="4">
+           <widget class="QFontComboBox" name="changeFontButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Goudy Old Style</family>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QComboBox" name="changeFontSizeButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Goudy Old Style</family>
+              <pointsize>9</pointsize>
+             </font>
             </property>
            </widget>
           </item>
@@ -313,9 +348,12 @@ QPushButton:hover{
             <number>0</number>
            </property>
            <item>
-            <widget class="QPlainTextEdit" name="noteArea">
-             <property name="plainText">
-              <string/>
+            <widget class="QTextEdit" name="noteArea">
+             <property name="font">
+              <font>
+               <family>MS Shell Dlg 2</family>
+               <pointsize>13</pointsize>
+              </font>
              </property>
             </widget>
            </item>
@@ -449,7 +487,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/chris/Downloads/Project Icons/undo.png</normaloff>C:/Users/chris/Downloads/Project Icons/undo.png</iconset>
+              <normaloff>../Images/Buttons/undo.png</normaloff>../Images/Buttons/undo.png</iconset>
             </property>
            </widget>
           </item>
@@ -513,7 +551,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/chris/Downloads/Project Icons/redo.png</normaloff>C:/Users/chris/Downloads/Project Icons/redo.png</iconset>
+              <normaloff>../Images/Buttons/redo.png</normaloff>../Images/Buttons/redo.png</iconset>
             </property>
             <property name="iconSize">
              <size>

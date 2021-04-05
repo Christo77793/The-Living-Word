@@ -1,5 +1,6 @@
 from notes_bible import *
 from sqlite_bible import *
+from bookmark_popup_bible import *
 import sys
 import random
 import time
@@ -27,7 +28,7 @@ class MainWindow(Qtw.QMainWindow):
         uic.loadUi(r"UI\Bible Design.ui", self)
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images\logo.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_main.png"))
 
         self.show()  # show the UI
 
@@ -54,9 +55,7 @@ class MainWindow(Qtw.QMainWindow):
 
         # Books
         books_list = self.findChild(Qtw.QComboBox, "Book")
-        books_list_index = books_list.currentIndex()  # Book's name {index}
-        self.update_chapter_list(books_list_index)  # Count chapter of the first book)
-
+        self.update_chapter_list()  # Count chapter of the first book)
         books_list.currentIndexChanged.connect(self.update_chapter_list)  # Automatically update chapter count
 
         # Verses Functions
@@ -73,6 +72,13 @@ class MainWindow(Qtw.QMainWindow):
         next_chapter = self.findChild(Qtw.QPushButton, "nextChapter")
         next_chapter.clicked.connect(self.next_chapter)
 
+        # Displaying Verses
+
+        # Setting a custom context menu
+        verses_label = self.findChild(Qtw.QLabel, "versesLabel")  # instance of verses label
+        verses_label.setContextMenuPolicy(Qtc.Qt.CustomContextMenu)
+        verses_label.customContextMenuRequested.connect(self.verses_custom_context_menu)
+
     def change_menu_width(self):
         '''
         Function to expand and restore the toggle menu.
@@ -81,7 +87,7 @@ class MainWindow(Qtw.QMainWindow):
         toggle_frame_length = self.findChild(Qtw.QFrame, "frame_9")
         toggle_width = toggle_frame_length.width()
 
-        max_width = 145
+        max_width = 130
         min_width = 47
 
         if toggle_width == min_width:
@@ -115,6 +121,7 @@ class MainWindow(Qtw.QMainWindow):
 
         message_ = Qtw.QMessageBox()
         message_.setWindowTitle("About")
+        message_.setWindowIcon(Qtg.QIcon(r"Images\Popup Icons\menu_about.png"))
         message_.setText("This is my final project for my 6th semester in Computer Applications. Technology used is Python 3.9, framework used PyQT5, IDE used PyCharm.")
 
         x = message_.exec()  # executes the function
@@ -145,8 +152,13 @@ class MainWindow(Qtw.QMainWindow):
 
         for verse_list in verses:
             # verse_list iterates through the verses list
-            display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
-            verses_label.setText(display_verse)
+            if verse_list == verses[-1]:
+                # removing extra break if it is the last verse
+                display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                verses_label.setText(display_verse)
+            else:
+                display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
+                verses_label.setText(display_verse)
 
     def next_chapter(self):
         '''
@@ -187,8 +199,13 @@ class MainWindow(Qtw.QMainWindow):
             display_verse = ""
 
             for verse_list in verses:
-                display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
-                verses_label.setText(display_verse)
+                if verse_list == verses[-1]:
+                    # removing extra break if it is the last verse
+                    display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                    verses_label.setText(display_verse)
+                else:
+                    display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
+                    verses_label.setText(display_verse)
 
             # Updating ComboBoxes
             updated_chapter_index = chapter.findText(selected_chapter, Qtc.Qt.MatchFixedString)
@@ -223,8 +240,13 @@ class MainWindow(Qtw.QMainWindow):
                 verses_label = self.findChild(Qtw.QLabel, "versesLabel")
                 display_verse = ""
                 for verse_list in verses:
-                    display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
-                    verses_label.setText(display_verse)
+                    if verse_list == verses[-1]:
+                        # removing extra break if it is the last verse
+                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                        verses_label.setText(display_verse)
+                    else:
+                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
+                        verses_label.setText(display_verse)
 
                 # Updating ComboBoxes
                 updated_index = chapter.findText(selected_chapter, Qtc.Qt.MatchFixedString)
@@ -242,18 +264,24 @@ class MainWindow(Qtw.QMainWindow):
                 display_verse = ""
 
                 for verse_list in verses:
-                    display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
-                    verses_label.setText(display_verse)
+                    if verse_list == verses[-1]:
+                        # removing extra break if it is the last verse
+                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                        verses_label.setText(display_verse)
+                    else:
+                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
+                        verses_label.setText(display_verse)
 
                 # Updating ComboBoxes
                 book.setCurrentIndex(selected_book)
                 chapter.setCurrentIndex(int(prev_chapter) - 1)
 
-    def update_chapter_list(self, book_name):
+    def update_chapter_list(self):
         '''
         Function to update the chapter combobox with different Bible books
-        :parameter: book_name -> Takes the current Bible Book
         '''
+
+        book_name = self.Book.currentIndex()
 
         chapters_combo_box = self.findChild(Qtw.QComboBox, "Chapter")
         chapters_combo_box.clear()  # clear the current list
@@ -261,8 +289,7 @@ class MainWindow(Qtw.QMainWindow):
         # Variable to store the returned value from the chapter_list function
         chapters = chapter_list(book_name)
 
-        for chapter in chapters:
-            chapters_combo_box.addItem(str(chapter[0]))
+        chapters_combo_box.addItems([str(chapter[0]) for chapter in chapters])
 
         chapters_combo_box.setCurrentIndex(0)  # Updating index
 
@@ -274,6 +301,50 @@ class MainWindow(Qtw.QMainWindow):
 
         bible_promise_label = self.findChild(Qtw.QLabel, "bible_promise_text")
         bible_promise_label.setText(verse)
+
+    def verses_custom_context_menu(self):
+        # Context Menu
+        context_menu_option = Qtw.QMenu()
+
+        # BookMark
+        bookmark_button = context_menu_option.addAction("BookMark")
+        bookmark_button.triggered.connect(self.bookmark_popup)  # Execute bookmark function
+
+        # Clear
+        clear_text = '''<html>
+                            <head/>
+                                <body>
+                                    <p>Click on Get Verses to start viewing verses.<br/></p>
+                                    <p>Shortcuts:</p>
+                                    <p>1. Enter : Get Verses {Shows verses}</p>
+                                    <p>2. -&gt; : Next</p>
+                                    <p>3. &lt;- : Previous</p>
+                                </body>
+                            </html>'''
+        clear_button = context_menu_option.addAction("Clear")
+        clear_button.triggered.connect(lambda: self.versesLabel.setText(clear_text))
+
+        # # Copy
+        # copy_text = context_menu_option.addAction("Copy")
+        # copy_text.triggered.connect(lambda: self.versesLabel.copy)
+
+        cursor = Qtg.QCursor()
+        context_menu_option.exec_(cursor.pos())
+
+    def bookmark_popup(self):
+        # Book name
+        book = self.findChild(Qtw.QComboBox, "Book")
+        selected_book = book.currentIndex()
+
+        # Chapter number
+        chapter = self.findChild(Qtw.QComboBox, "Chapter")
+        selected_chapter = chapter.currentIndex()
+
+        # Translation selected
+        translation = self.findChild(Qtw.QComboBox, "Translation")
+        selected_translation = translation.currentIndex()
+
+        self.bookmark_ui = BookMarkPopUp(selected_book, selected_chapter, selected_translation)
 
     def closeEvent(self, event):
         '''

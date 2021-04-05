@@ -55,49 +55,15 @@ def show_verses(book_id, chapter_id, translation_filter, verse_id=""):
     else:  # DARBY
         selected_translation = "t_dby"
 
-    if not verse_id:
-        cursor.execute(f'''SELECT * FROM {selected_translation}
-                    WHERE b = {book_id} AND c = {chapter_id}''')
+    cursor.execute(f'''SELECT * FROM {selected_translation}
+                WHERE b = {book_id} AND c = {chapter_id}''')
 
-        selected_verses = cursor.fetchall()
-    else:
-        if type(verse_id) is not str:
-            verse_id = str(verse_id)  # converting to string
-
-        cursor.execute(f'''SELECT * FROM {selected_translation}
-                            WHERE b = {book_id} AND c = {chapter_id} and v = {verse_id}''')
-
-        selected_verses = cursor.fetchall()
+    selected_verses = cursor.fetchall()
 
     conn.commit()
     conn.close()
 
     return selected_verses
-
-
-def chapter_list(book_id):
-    '''
-    Function to return the number of chapters in a book
-    :parameter: book_id -> Contains the book name's index number
-    '''
-
-    conn = sqlite3.connect(r"Bible Database\bible_database.db")
-
-    cursor = conn.cursor()
-
-    book_id += 1
-    book_id = str(book_id)
-
-    cursor.execute(f'''SELECT c FROM t_kjv
-                       WHERE b = {book_id}
-                       GROUP BY c''')
-
-    chapter_count = cursor.fetchall()
-
-    conn.commit()
-    conn.close()
-
-    return chapter_count
 
 
 def daily_verses(book_id, chapter_id, verse_id):
@@ -130,3 +96,89 @@ def daily_verses(book_id, chapter_id, verse_id):
     conn.close()
 
     return selected_verses
+
+
+def chapter_list(book_id):
+    '''
+    Function to return the number of chapters in a book
+    :parameter: book_id -> Contains the book name's index number
+    '''
+
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
+
+    cursor = conn.cursor()
+
+    book_id += 1
+    book_id = str(book_id)
+
+    cursor.execute(f'''SELECT c FROM t_kjv
+                       WHERE b = {book_id}
+                       GROUP BY c''')
+
+    chapter_count = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+
+    return chapter_count
+
+
+def verse_list(book_id, chapter_id):
+    '''
+        Function to return the number of verses in a chapter
+        :parameter: book_id -> Contains the book name's index number
+        :parameter: book_id -> Contains the chapter number's index number
+        '''
+
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
+
+    cursor = conn.cursor()
+
+    book_id += 1
+    book_id = str(book_id)
+
+    chapter_id += 1
+    chapter_id = str(chapter_id)
+
+    cursor.execute(f'''SELECT v FROM t_kjv
+                       WHERE b = {book_id} and c = {chapter_id}
+                       GROUP BY v''')
+
+    verse_count = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+
+    return verse_count
+
+
+def select_verse(book_id, chapter_id, verse_id):
+    '''
+    Function to return the number of chapters in a book
+    :parameter: book_id -> Contains the book name's index number
+    :parameter: book_id -> Contains the chapter number's index number
+    '''
+
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
+
+    cursor = conn.cursor()
+
+    book_id += 1
+    book_id = str(book_id)
+
+    chapter_id += 1
+    chapter_id = str(chapter_id)
+
+    verse_id += 1
+    verse_id = str(verse_id)
+
+    cursor.execute(f'''SELECT t FROM t_kjv
+                       WHERE b = {book_id} and c = {chapter_id} and v = {verse_id}
+                    ''')
+
+    selected_verse = cursor.fetchall()
+
+    conn.commit()
+    conn.close()
+
+    return selected_verse

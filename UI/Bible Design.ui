@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1098</width>
-    <height>870</height>
+    <height>869</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -102,7 +102,7 @@ QPushButton:hover{
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item>
+       <item alignment="Qt::AlignLeft">
         <widget class="QFrame" name="menu_frame">
          <property name="minimumSize">
           <size>
@@ -120,17 +120,17 @@ QPushButton:hover{
           <string notr="true">color: rgb(255, 255, 255);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
           <property name="spacing">
-           <number>15</number>
+           <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>3</number>
+           <number>4</number>
           </property>
           <property name="topMargin">
            <number>0</number>
@@ -181,7 +181,7 @@ QPushButton:hover{
          </layout>
         </widget>
        </item>
-       <item>
+       <item alignment="Qt::AlignLeft">
         <widget class="QFrame" name="notes_frame">
          <property name="minimumSize">
           <size>
@@ -199,14 +199,14 @@ QPushButton:hover{
           <string notr="true">color: rgb(255, 255, 255);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_6">
           <property name="spacing">
-           <number>15</number>
+           <number>0</number>
           </property>
           <property name="leftMargin">
            <number>3</number>
@@ -215,7 +215,7 @@ QPushButton:hover{
            <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>0</number>
+           <number>3</number>
           </property>
           <property name="bottomMargin">
            <number>0</number>
@@ -258,7 +258,86 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/chris/Downloads/Project Icons/write.png</normaloff>C:/Users/chris/Downloads/Project Icons/write.png</iconset>
+              <normaloff>../Images/Buttons/notes.png</normaloff>../Images/Buttons/notes.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>55</width>
+              <height>55</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignLeft">
+        <widget class="QFrame" name="bookmark_frame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>95</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>95</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>3</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="bookmarkButton">
+            <property name="minimumSize">
+             <size>
+              <width>113</width>
+              <height>75</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>113</width>
+              <height>75</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="toolTip">
+             <string>&lt;div style=&quot;color:black&quot;&gt;BookMarks&lt;/div&gt;</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string> Bookmarks</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../Images/Buttons/bookmark.png</normaloff>../Images/Buttons/bookmark.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -280,17 +359,17 @@ QPushButton:hover{
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">/*background-color: rgb(0, 255, 127);*/</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
         </widget>
        </item>
-       <item>
+       <item alignment="Qt::AlignLeft">
         <widget class="QFrame" name="about_frame">
          <property name="minimumSize">
           <size>
@@ -308,17 +387,17 @@ QPushButton:hover{
           <string notr="true">color: rgb(255, 255, 255);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_9">
           <property name="spacing">
-           <number>15</number>
+           <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>3</number>
+           <number>4</number>
           </property>
           <property name="topMargin">
            <number>0</number>
@@ -359,7 +438,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/chris/Downloads/Project Icons/user.png</normaloff>C:/Users/chris/Downloads/Project Icons/user.png</iconset>
+              <normaloff>../Images/Buttons/user.png</normaloff>../Images/Buttons/user.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -414,7 +493,7 @@ QPushButton:hover{
 }</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
@@ -438,7 +517,7 @@ QPushButton:hover{
           <item>
            <widget class="QFrame" name="bible_promise_header">
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
@@ -522,7 +601,7 @@ QPushButton:hover{
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_4">
+           <widget class="QFrame" name="bible_navigate_frame">
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -551,7 +630,7 @@ QComboBox {
 }*/</string>
             </property>
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
@@ -952,7 +1031,7 @@ QComboBox {
                 </font>
                </property>
                <property name="toolTip">
-                <string>Chapters of the respective book</string>
+                <string>Chapters of the book</string>
                </property>
                <property name="frame">
                 <bool>true</bool>
@@ -1049,7 +1128,7 @@ QComboBox {
 }*/</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
@@ -1073,7 +1152,7 @@ QComboBox {
           <item>
            <widget class="QFrame" name="frame_6">
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
@@ -1116,7 +1195,7 @@ QPushButton:hover{
 </string>
                </property>
                <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+                <enum>QFrame::NoFrame</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
@@ -1258,7 +1337,7 @@ QPushButton:hover{
           <item alignment="Qt::AlignRight">
            <widget class="QFrame" name="frame">
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
@@ -1302,15 +1381,15 @@ QPushButton:hover{
 	background-color: rgb(184, 207, 229);
 }
 
-QAbstractScrollArea {
+/*QAbstractScrollArea {
 	background-color: rgb(184, 207, 229);
-}
+}*/
 QWidget#scrollAreaWidgetContents{
 	background-color: rgb(184, 207, 229);
 }</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
@@ -1320,16 +1399,16 @@ QWidget#scrollAreaWidgetContents{
            <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>7</number>
+           <number>15</number>
           </property>
           <property name="topMargin">
            <number>7</number>
           </property>
           <property name="rightMargin">
-           <number>7</number>
+           <number>15</number>
           </property>
           <property name="bottomMargin">
-           <number>7</number>
+           <number>9</number>
           </property>
           <item>
            <widget class="QScrollArea" name="scrollableArea">
@@ -1342,6 +1421,12 @@ QWidget#scrollAreaWidgetContents{
             <property name="styleSheet">
              <string notr="true"/>
             </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
             <property name="widgetResizable">
              <bool>true</bool>
             </property>
@@ -1353,8 +1438,8 @@ QWidget#scrollAreaWidgetContents{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1033</width>
-               <height>517</height>
+               <width>1021</width>
+               <height>532</height>
               </rect>
              </property>
              <property name="maximumSize">
@@ -1443,16 +1528,16 @@ QScrollbar::add-page:vertical, QScrollBar::sub-page:vertical{
                <number>0</number>
               </property>
               <property name="leftMargin">
-               <number>11</number>
+               <number>7</number>
               </property>
               <property name="topMargin">
-               <number>11</number>
+               <number>7</number>
               </property>
               <property name="rightMargin">
-               <number>11</number>
+               <number>7</number>
               </property>
               <property name="bottomMargin">
-               <number>11</number>
+               <number>7</number>
               </property>
               <item>
                <widget class="QLabel" name="versesLabel">
@@ -1477,7 +1562,7 @@ QScrollbar::add-page:vertical, QScrollBar::sub-page:vertical{
                  <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>Verses will be displayed here</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click on Get Verses to start viewing verses.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Shortcuts:&lt;/p&gt;&lt;p&gt;1. Enter : Get Verses {Shows verses}&lt;/p&gt;&lt;p&gt;2. -&amp;gt; : Next&lt;/p&gt;&lt;p&gt;3. &amp;lt;- : Previous&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
