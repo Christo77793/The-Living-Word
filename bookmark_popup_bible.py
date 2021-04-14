@@ -1,4 +1,4 @@
-from bookmark_verses_bible import *
+from sqlite_add_bookmark_bible import *
 from sqlite_bible import *
 import sys
 import os
@@ -21,7 +21,7 @@ class BookMarkPopUp(Qtw.QMainWindow):
         uic.loadUi(r"UI\BookMark Popup.ui", self)
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_bookmark.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_add_bookmark.png"))
 
         self.show()  # show the UI
 
@@ -41,6 +41,7 @@ class BookMarkPopUp(Qtw.QMainWindow):
 
         translation_name = self.findChild(Qtw.QComboBox, "translationName")
         translation_name.setCurrentIndex(translation)
+        translation_name.currentIndexChanged.connect(self.show_selected_verse)  # Automatically update the verse based on translation selected
 
         add_bookmark = self.findChild(Qtw.QPushButton, "addBookMark")
         add_bookmark.clicked.connect(self.bookmark_verses)
@@ -119,11 +120,15 @@ class BookMarkPopUp(Qtw.QMainWindow):
         book_name = self.bookName.currentIndex()
         chapter_number = self.chapterNumber.currentIndex()
         verse_number = self.verseNumber.currentIndex()
+        translation_name = self.translationName.currentText()
 
-        selected_verse = select_verse(book_name, chapter_number, verse_number)
+        # Variable to store the returned value from from the select_verse function
+        selected_verse = select_verse(book_name, chapter_number, verse_number, translation_name)
 
-        self.verseText.setText(selected_verse[0][0])
-
+        try:
+            self.verseText.setText(selected_verse[0][0])
+        except IndexError:
+            pass
 
 
 if __name__ == "__main__":

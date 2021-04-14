@@ -19,7 +19,7 @@ bible_promises = [["Job", 8, 7], ["1 Chronicles", 16, 34], ["James", 1, 17],
                   ["Revelation", 3, 8], ["Haggai", 2, 19], ["Psalms", 50, 15]]
 
 
-def show_verses(book_id, chapter_id, translation_filter, verse_id=""):
+def show_verses(book_id, chapter_id, translation_filter):
     '''
     Function to show the verses from the provided book name, chapter number and the selected translation
 
@@ -154,7 +154,7 @@ def verse_list(book_id, chapter_id):
     return verse_count
 
 
-def select_verse(book_id, chapter_id, verse_id):
+def select_verse(book_id, chapter_id, verse_id, translation_filter):
     '''
     Function to return the number of chapters in a book
 
@@ -176,7 +176,25 @@ def select_verse(book_id, chapter_id, verse_id):
     verse_id += 1
     verse_id = str(verse_id)
 
-    cursor.execute(f'''SELECT t FROM t_kjv
+    if translation_filter == "KJV":
+        selected_translation = "t_kjv"
+
+    elif translation_filter == "ASV":
+        selected_translation = "t_asv"
+
+    elif translation_filter == "BBE":
+        selected_translation = "t_bbe"
+
+    elif translation_filter == "WBT":
+        selected_translation = "t_wbt"
+
+    elif translation_filter == "YLT":
+        selected_translation = "t_ylt"
+
+    else:  # DARBY
+        selected_translation = "t_dby"
+
+    cursor.execute(f'''SELECT t FROM {selected_translation}
                        WHERE b = {book_id} and c = {chapter_id} and v = {verse_id}
                     ''')
 

@@ -1,6 +1,7 @@
 from notes_bible import *
-from sqlite_bible import *
 from bookmark_popup_bible import *
+from bookmarks_bible import *
+from sqlite_bible import *
 import sys
 import random
 import time
@@ -14,8 +15,6 @@ import cgitb
 
 cgitb.enable(format='text')
 
-
-# customContextMenuRequested
 
 # noinspection PyMethodMayBeStatic,PyAttributeOutsideInit
 class MainWindow(Qtw.QMainWindow):
@@ -41,6 +40,10 @@ class MainWindow(Qtw.QMainWindow):
         # Notes
         note_maker = self.findChild(Qtw.QPushButton, "notesButton")
         note_maker.clicked.connect(self.open_note_maker)
+
+        # View BookMarks
+        view_bookmarks = self.findChild(Qtw.QPushButton, "bookmarkButton")
+        view_bookmarks.clicked.connect(self.open_view_bookmarks)
 
         # About
         about = self.findChild(Qtw.QPushButton, "aboutButton")
@@ -87,7 +90,7 @@ class MainWindow(Qtw.QMainWindow):
         toggle_frame_length = self.findChild(Qtw.QFrame, "frame_9")
         toggle_width = toggle_frame_length.width()
 
-        max_width = 130
+        max_width = 131
         min_width = 47
 
         if toggle_width == min_width:
@@ -113,6 +116,25 @@ class MainWindow(Qtw.QMainWindow):
         '''
 
         self.note_ui = NotesWindow()
+
+    def open_view_bookmarks(self):
+        '''
+        Function to open the view bookmarks UI.
+        '''
+
+        # Book name
+        book = self.findChild(Qtw.QComboBox, "Book")
+        selected_book = book.currentIndex()
+
+        # Chapter number
+        chapter = self.findChild(Qtw.QComboBox, "Chapter")
+        selected_chapter = chapter.currentIndex()
+
+        # Translation selected
+        translation = self.findChild(Qtw.QComboBox, "Translation")
+        selected_translation = translation.currentIndex()
+
+        self.view_bookmark_ui = ShowBookMarks(selected_book, selected_chapter, selected_translation)
 
     def show_about_message(self):
         '''
@@ -162,7 +184,7 @@ class MainWindow(Qtw.QMainWindow):
 
     def next_chapter(self):
         '''
-        Shows the verses of the next chapter
+        Shows the verses of the next chapter.
         '''
 
         book = self.findChild(Qtw.QComboBox, "Book")
@@ -213,7 +235,7 @@ class MainWindow(Qtw.QMainWindow):
 
     def previous_chapter(self):
         '''
-        Shows the verses of the previous chapter
+        Shows the verses of the previous chapter.
         '''
 
         book = self.findChild(Qtw.QComboBox, "Book")
@@ -278,7 +300,7 @@ class MainWindow(Qtw.QMainWindow):
 
     def update_chapter_list(self):
         '''
-        Function to update the chapter combobox with different Bible books
+        Function to update the chapter combobox with different Bible books.
         '''
 
         book_name = self.Book.currentIndex()  # index value of the book name
@@ -289,13 +311,13 @@ class MainWindow(Qtw.QMainWindow):
         # Variable to store the returned value from the chapter_list function
         chapters = chapter_list(book_name)
 
-        chapters_combo_box.addItems([str(chapter[0]) for chapter in chapters])
+        chapters_combo_box.addItems([str(chapter[0]) for chapter in chapters])  # Adding the chapters
 
         chapters_combo_box.setCurrentIndex(0)  # Updating index
 
     def bible_promise_function(self, verse):
         '''
-        Function that takes value from the QThread class to show a Biblical Promise
+        Function that takes the value from the QThread class to show a Biblical Promise.
 
         :parameter: verse -> Promise to show
         '''
@@ -304,6 +326,10 @@ class MainWindow(Qtw.QMainWindow):
         bible_promise_label.setText(verse)
 
     def verses_custom_context_menu(self):
+        '''
+        Function that shows a custom context menu.
+        '''
+
         # Context Menu
         context_menu_option = Qtw.QMenu()
 
@@ -321,14 +347,19 @@ class MainWindow(Qtw.QMainWindow):
                                     <p>2. -&gt; : Next</p>
                                     <p>3. &lt;- : Previous</p>
                                 </body>
-                            </html>'''
-        clear_button = context_menu_option.addAction("Clear")
+                        </html>'''
+
+        clear_button = context_menu_option.addAction("Clear")  # Adding an option to clear text
         clear_button.triggered.connect(lambda: self.versesLabel.setText(clear_text))
 
         cursor = Qtg.QCursor()
         context_menu_option.exec_(cursor.pos())
 
     def bookmark_popup(self):
+        '''
+        Function to show a pop-up that adds the bookmark. Values are passed to the __init__ method of the BookMarkPop class.
+        '''
+
         # Book name
         book = self.findChild(Qtw.QComboBox, "Book")
         selected_book = book.currentIndex()
@@ -345,7 +376,7 @@ class MainWindow(Qtw.QMainWindow):
 
     def closeEvent(self, event):
         '''
-        Qt Class to end events when app closes
+        Qt Class to end events when app closes.
         '''
 
         promises_instance = self.p_instance = MyThread()

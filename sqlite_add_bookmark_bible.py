@@ -1,5 +1,6 @@
 import sqlite3
 
+
 # # Code to create bookmarked_verses database file
 # conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
 #
@@ -28,6 +29,7 @@ def add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text
     :param: verse_text -> Verse Text
     :param: translation_name -> Translation Name
     '''
+
     conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
     c = conn.cursor()
 
@@ -57,31 +59,3 @@ def add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text
 
     conn.commit()
     conn.close()
-
-
-def show_bookmarks():
-    '''
-    Test Function to display data from the bookmarked_verses databases file.
-    --Will be deprecated--
-    '''
-
-    print("TESTING\n\n")
-
-    conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
-
-    cursor = conn.cursor()
-
-    cursor.execute(f'''SELECT * FROM bookmarked_verses''')
-
-    bookmarked = cursor.fetchall()
-
-    conn.commit()
-    conn.close()
-
-    print(bookmarked)
-    for x in bookmarked:
-        print(x[0])
-        print(x[1])
-        print(x[2])
-        print(x[3])
-
