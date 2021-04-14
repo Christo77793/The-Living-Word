@@ -15,7 +15,13 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">/*#frame_2 {
+	background-color: rgb(215, 227, 252);
+}*/
+
+#centralwidget {
+	background-color: rgb(215, 227, 252);
+}</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
@@ -758,7 +764,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <string notr="true"/>
             </property>
            </widget>
           </item>
@@ -879,6 +885,17 @@
     </item>
     <item alignment="Qt::AlignHCenter">
      <widget class="QFrame" name="status_frame">
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgba(204, 219, 253, 1);
+	border-radius: 25px;
+}
+
+QPushButton:hover{
+	background-color: rgb(198, 213, 245);
+	border-radius: 25px;
+}</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -899,14 +916,14 @@
         <widget class="QPushButton" name="addBookMark">
          <property name="minimumSize">
           <size>
-           <width>300</width>
-           <height>45</height>
+           <width>250</width>
+           <height>55</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>45</width>
-           <height>16777215</height>
+           <width>250</width>
+           <height>55</height>
           </size>
          </property>
          <property name="font">
