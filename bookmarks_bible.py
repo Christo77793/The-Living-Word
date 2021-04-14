@@ -63,6 +63,9 @@ class ShowBookMarks(Qtw.QMainWindow):
                 self.tableWidget.setItem(row_number, column_number, Qtw.QTableWidgetItem(str(column_data)))  # set the respective data in each column of the row
 
     def bookmark_popup(self, selected_book, selected_chapter, selected_translation):
+        '''
+        Function to show a pop-up that adds the bookmark. Values are passed to the __init__ method of the BookMarkPop class.
+        '''
 
         self.bookmark_pop_ui = BookMarkPopUp(selected_book, selected_chapter, selected_translation)
 
