@@ -1,4 +1,4 @@
-# The-Living-Word
+# The Living Word
 
 This app can show all the verses of the Bible, from select translations {KJV, ASV, BBE, WBT, YLT, DARBY}. 
 
