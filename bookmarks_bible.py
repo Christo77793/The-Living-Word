@@ -74,31 +74,37 @@ class ShowBookMarks(Qtw.QMainWindow):
         Function to delete a verse from the bookmarked_verses database.
         '''
 
-        try:
-            conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
+        if self.total_count > 0:
 
-            cursor = conn.cursor()
+            try:
+                conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
 
-            # Pop-Up to select the row number to be deleted
+                cursor = conn.cursor()
 
-            widget = Qtw.QWidget()
+                # Pop-Up to select the row number to be deleted
 
-            # User inputs the row number to be deleted
-            row_ID = Qtw.QInputDialog.getInt(widget, "Delete BookMark", "Select BookMark number: ", min=1, max=self.total_count)
-            row_ID = row_ID[0]
+                widget = Qtw.QWidget()
 
-            cursor.execute(f'''DELETE FROM bookmarked_verses WHERE ROWID = {row_ID}''')
+                # User inputs the row number to be deleted
+                row_ID = Qtw.QInputDialog.getInt(widget, "Delete BookMark", "Select BookMark number: ", min=1, max=self.total_count)
+                row_ID = row_ID[0]
 
-            conn.commit()
-            conn.close()
+                cursor.execute(f'''DELETE FROM bookmarked_verses WHERE ROWID = {row_ID}''')
 
-        except:
-            # if deleting the verse from the database fails
-            self.deletionStatus.setText("Failed To Delete")
+                conn.commit()
+                conn.close()
+
+            except:
+                # if deleting the verse from the database fails
+                self.deletionStatus.setText("Failed To Delete")
+
+            else:
+                self.tableWidget.removeRow(row_ID - 1)  # removes the deleted row from the QTableWidget
+                self.total_count = self.tableWidget.rowCount()
+                # self.deletionStatus.setText("Deleted")
 
         else:
-            self.tableWidget.removeRow(row_ID - 1)  # removes the deleted row from the QTableWidget
-            # self.deletionStatus.setText("Deleted")
+            self.deletionStatus.setText("Nothing to delete")
 
 
 if __name__ == "__main__":
