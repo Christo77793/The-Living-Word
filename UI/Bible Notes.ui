@@ -586,15 +586,8 @@ QPushButton:hover{
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_As"/>
-    <addaction name="actionPrint"/>
-   </widget>
-   <widget class="QMenu" name="menuEdit">
-    <property name="title">
-     <string>Edit</string>
-    </property>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuEdit"/>
   </widget>
   <action name="actionOpen">
    <property name="text">
