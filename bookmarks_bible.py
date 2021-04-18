@@ -12,6 +12,7 @@ import cgitb
 
 cgitb.enable(format='text')
 
+
 # main_app_object = MainWindow()  # an object of the MainWindow class
 
 
@@ -74,7 +75,7 @@ class ShowBookMarks(Qtw.QMainWindow):
         Function to delete a verse from the bookmarked_verses database.
         '''
 
-        if self.total_count > 0:
+        if self.total_count > 0:  # allow to delete bookmarks only if the total count is more than 0
 
             try:
                 conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
