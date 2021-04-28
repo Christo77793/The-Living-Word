@@ -1554,7 +1554,7 @@ QScrollbar::add-page:vertical, QScrollBar::sub-page:vertical{
                  <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click on Get Verses to start viewing verses.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Shortcuts:&lt;/p&gt;&lt;p&gt;1. Enter : Get Verses {Shows verses}&lt;/p&gt;&lt;p&gt;2. -&amp;gt; : Next&lt;/p&gt;&lt;p&gt;3. &amp;lt;- : Previous&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click on Get Verses to start viewing verses.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Right Click to:&lt;/p&gt;&lt;p&gt;1. Add a BookMark&lt;/p&gt;&lt;p&gt;2. Clear the screen&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Shortcuts:&lt;/p&gt;&lt;p&gt;1. Enter : Get Verses&lt;/p&gt;&lt;p&gt;2. -&amp;gt; : Next&lt;/p&gt;&lt;p&gt;3. &amp;lt;- : Previous&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
