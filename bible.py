@@ -30,6 +30,7 @@ class MainWindow(Qtw.QMainWindow):
         self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_main.png"))
 
         self.show()  # show the UI
+        self.showMaximized()  # loads the app in full-screen
 
         # Toggle Menu Buttons
 

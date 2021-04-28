@@ -24,6 +24,7 @@ class NotesWindow(Qtw.QMainWindow):
         self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_notes.png"))
 
         self.show()
+        self.showMaximized()  # loads the app in full-screen
 
         self.accepted_file_types = "Text Document (*.txt);; Python (*.py)"  # file types that can be opened
 
