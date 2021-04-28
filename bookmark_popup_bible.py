@@ -96,7 +96,7 @@ class BookMarkPopUp(Qtw.QMainWindow):
 
     def update_verse_list(self):
         '''
-        Function to update the chapter combobox with different Bible books
+        Function to update the verses combobox with different chapters
         '''
 
         book_name = self.bookName.currentIndex()
@@ -114,7 +114,7 @@ class BookMarkPopUp(Qtw.QMainWindow):
 
     def show_selected_verse(self):
         '''
-        Function to update the chapter combobox with different Bible books
+        Function to show the currently set verse as per provided book name, chapter number and verse number
         '''
 
         book_name = self.bookName.currentIndex()
