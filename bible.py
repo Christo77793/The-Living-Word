@@ -341,13 +341,15 @@ class MainWindow(Qtw.QMainWindow):
         # Clear
         clear_text = '''<html>
                             <head/>
-                                <body>
-                                    <p>Click on Get Verses to start viewing verses.<br/></p>
-                                    <p>Shortcuts:</p>
-                                    <p>1. Enter : Get Verses {Shows verses}</p>
-                                    <p>2. -&gt; : Next</p>
-                                    <p>3. &lt;- : Previous</p>
-                                </body>
+                            <body>
+                                <p>Click on Get Verses to start viewing verses.<br/></p>
+                                <p>Right Click to:</p><p>1. Add a BookMark</p>
+                                <p>2. Clear the screen<br/></p>
+                                <p>Shortcuts:</p>
+                                <p>1. Enter : Get Verses</p>
+                                <p>2. -&gt; : Next</p>
+                                <p>3. &lt;- : Previous</p>
+                            </body>
                         </html>'''
 
         clear_button = context_menu_option.addAction("Clear")  # Adding an option to clear text
