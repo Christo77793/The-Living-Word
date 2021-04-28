@@ -101,7 +101,20 @@ class ShowBookMarks(Qtw.QMainWindow):
 
             else:
                 self.tableWidget.removeRow(row_ID - 1)  # removes the deleted row from the QTableWidget
+                print("Total Count is: [before1] ", self.total_count)
                 self.total_count = self.tableWidget.rowCount()
+                print("Total Count is: [after] ", self.total_count)
+
+                if self.total_count == 0:
+                    print("Deleting since count is now 0")
+                    conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
+
+                    cursor = conn.cursor()
+
+                    cursor.execute(f'''DELETE FROM bookmarked_verses''')
+
+                    conn.commit()
+                    conn.close()
                 # self.deletionStatus.setText("Deleted")
 
         else:
