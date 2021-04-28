@@ -110,7 +110,7 @@ class NotesWindow(Qtw.QMainWindow):
             else:
                 self.path = path
 
-                note_area = self.findChild(Qtw.QPlainTextEdit, "noteArea")
+                note_area = self.findChild(Qtw.QTextEdit, "noteArea")
                 note_area.setPlainText(text)
 
                 self.change_window_title()
