@@ -24,10 +24,10 @@ class MainWindow(Qtw.QMainWindow):
         super().__init__()  # avoid code redundancy
 
         # loading the application's UI {stored as XML format}
-        uic.loadUi(r"UI/Bible Design.ui", self)
+        uic.loadUi(r"UI\Bible Design.ui", self)
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images/Window Icons/bible_main.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_main.png"))
 
         self.show()  # show the UI
         self.showMaximized()  # loads the app in full-screen
@@ -144,7 +144,7 @@ class MainWindow(Qtw.QMainWindow):
 
         message_ = Qtw.QMessageBox()
         message_.setWindowTitle("About")
-        message_.setWindowIcon(Qtg.QIcon(r"Images/Popup Icons/menu_about.png"))
+        message_.setWindowIcon(Qtg.QIcon(r"Images\Popup Icons\menu_about.png"))
         message_.setText("This is my final project for my 6th semester in Computer Applications. Technology used is Python 3.9, framework used PyQT5, IDE used PyCharm.")
 
         x = message_.exec()  # executes the function

@@ -17,11 +17,11 @@ class NotesWindow(Qtw.QMainWindow):
         super().__init__()  # avoid code redundancy
 
         # loading the application's UI {stored as XML format}
-        # uic.loadUi(r"UI/Test.ui", self)
-        uic.loadUi(r"UI/Bible Notes.ui", self)
+        # uic.loadUi(r"UI\Test.ui", self)
+        uic.loadUi(r"UI\Bible Notes.ui", self)
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images/Window Icons/bible_notes.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_notes.png"))
 
         self.show()
         self.showMaximized()  # loads the app in full-screen

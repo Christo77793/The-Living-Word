@@ -27,7 +27,7 @@ def show_verses(book_id, chapter_id, translation_filter):
     :parameter: chapter_id -> Contains the chapter number
     :parameter: translation_filter -> Contains the translation's index
     '''
-    conn = sqlite3.connect(r"Bible Database/bible_database.db")
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
 
@@ -74,7 +74,7 @@ def daily_verses(book_id, chapter_id, verse_id):
     :parameter: chapter_id -> Contains the chapter number
     :parameter: verse_id -> Contains the verse number
     '''
-    conn = sqlite3.connect(r"Bible Database/bible_database.db")
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
 
@@ -105,7 +105,7 @@ def chapter_list(book_id):
     :parameter: book_id -> Contains the book name's index number
     '''
 
-    conn = sqlite3.connect(r"Bible Database/bible_database.db")
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
 
@@ -132,7 +132,7 @@ def verse_list(book_id, chapter_id):
         :parameter: chapter_id -> Contains the chapter number's index number
         '''
 
-    conn = sqlite3.connect(r"Bible Database/bible_database.db")
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
 
@@ -163,7 +163,7 @@ def select_verse(book_id, chapter_id, verse_id, translation_filter):
     :parameter: verse_id -> Contains the verse number's index number
     '''
 
-    conn = sqlite3.connect(r"Bible Database/bible_database.db")
+    conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
     cursor = conn.cursor()
 

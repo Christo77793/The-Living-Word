@@ -2,7 +2,7 @@ import sqlite3
 
 
 # # Code to create bookmarked_verses database file
-# conn = sqlite3.connect(r"Bible Database/bookmarked_verses.db")
+# conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
 #
 # c = conn.cursor()
 #
@@ -30,7 +30,7 @@ def add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text
     :param: translation_name -> Translation Name
     '''
 
-    conn = sqlite3.connect(r"Bible Database/bookmarked_verses.db")
+    conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
     c = conn.cursor()
 
     if type(book_name) is not str:
