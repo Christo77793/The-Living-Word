@@ -18,10 +18,10 @@ class BookMarkPopUp(Qtw.QMainWindow):
     def __init__(self, name, chapter, translation):
         super().__init__()  # avoid code redundancy
 
-        uic.loadUi(r"UI\BookMark Popup.ui", self)
+        uic.loadUi(r"UI/BookMark Popup.ui", self)
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_add_bookmark.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images/Window Icons/bible_add_bookmark.png"))
 
         self.show()  # show the UI
 

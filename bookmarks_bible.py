@@ -21,14 +21,14 @@ class ShowBookMarks(Qtw.QMainWindow):
         super().__init__()
 
         # loading the application's UI {stored as XML format}
-        uic.loadUi(r"UI\View BookMarks.ui", self)
+        uic.loadUi(r"UI/View BookMarks.ui", self)
 
         name = current_name
         chapter = current_chapter
         translation = current_translation
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_view_bookmark.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images/Window Icons/bible_view_bookmark.png"))
 
         self.show()  # show the UI
 
@@ -49,7 +49,7 @@ class ShowBookMarks(Qtw.QMainWindow):
         Function to load all of the verses stored in the bookmarked_verses database.
         '''
 
-        conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
+        conn = sqlite3.connect(r"Bible Database/bookmarked_verses.db")
 
         cursor = conn.cursor()
 
@@ -78,7 +78,7 @@ class ShowBookMarks(Qtw.QMainWindow):
         if self.total_count > 0:  # allow to delete bookmarks only if the total count is more than 0
 
             try:
-                conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
+                conn = sqlite3.connect(r"Bible Database/bookmarked_verses.db")
 
                 cursor = conn.cursor()
 
@@ -106,7 +106,7 @@ class ShowBookMarks(Qtw.QMainWindow):
                 if self.total_count == 0:
                     # Deleting since count is now 0
 
-                    conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
+                    conn = sqlite3.connect(r"Bible Database/bookmarked_verses.db")
 
                     cursor = conn.cursor()
 
