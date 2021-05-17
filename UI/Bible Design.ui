@@ -209,7 +209,7 @@ QPushButton:hover{
            <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>3</number>
+           <number>4</number>
           </property>
           <property name="topMargin">
            <number>0</number>
@@ -1400,7 +1400,7 @@ QWidget#scrollAreaWidgetContents{
            <number>15</number>
           </property>
           <property name="bottomMargin">
-           <number>9</number>
+           <number>15</number>
           </property>
           <item>
            <widget class="QScrollArea" name="scrollableArea">
@@ -1431,7 +1431,7 @@ QWidget#scrollAreaWidgetContents{
                <x>0</x>
                <y>0</y>
                <width>1021</width>
-               <height>532</height>
+               <height>526</height>
               </rect>
              </property>
              <property name="maximumSize">

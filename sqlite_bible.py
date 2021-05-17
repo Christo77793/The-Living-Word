@@ -126,11 +126,11 @@ def chapter_list(book_id):
 
 def verse_list(book_id, chapter_id):
     '''
-        Function to return the number of verses in a chapter
+    Function to return the number of verses in a chapter
 
-        :parameter: book_id -> Contains the book name's index number
-        :parameter: chapter_id -> Contains the chapter number's index number
-        '''
+    :parameter: book_id -> Contains the book name's index number
+    :parameter: chapter_id -> Contains the chapter number's index number
+    '''
 
     conn = sqlite3.connect(r"Bible Database\bible_database.db")
 
