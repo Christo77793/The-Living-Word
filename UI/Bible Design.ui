@@ -143,6 +143,12 @@ QPushButton:hover{
           </property>
           <item>
            <widget class="QPushButton" name="menuButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>80</width>
@@ -168,7 +174,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/chris/Downloads/Project Icons/menu.png</normaloff>C:/Users/chris/Downloads/Project Icons/menu.png</iconset>
+              <normaloff>../Images/Buttons/menu.png</normaloff>../Images/Buttons/menu.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -222,6 +228,12 @@ QPushButton:hover{
           </property>
           <item>
            <widget class="QPushButton" name="notesButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>80</width>
@@ -309,6 +321,12 @@ QPushButton:hover{
           </property>
           <item>
            <widget class="QPushButton" name="bookmarkButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
               <width>113</width>
