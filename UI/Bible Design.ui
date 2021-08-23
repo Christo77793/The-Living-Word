@@ -133,7 +133,7 @@ QLabel{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/notes.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/notes.png</iconset>
+              <normaloff>../Images/Buttons/notes.png</normaloff>../Images/Buttons/notes.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -150,7 +150,7 @@ QLabel{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/bookmark.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/bookmark.png</iconset>
+              <normaloff>../Images/Buttons/bookmark.png</normaloff>../Images/Buttons/bookmark.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -167,7 +167,7 @@ QLabel{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/user.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/user.png</iconset>
+              <normaloff>../Images/Buttons/user.png</normaloff>../Images/Buttons/user.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -229,7 +229,7 @@ QLabel{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/menu.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/menu.png</iconset>
+              <normaloff>../Images/Buttons/menu.png</normaloff>../Images/Buttons/menu.png</iconset>
             </property>
             <property name="iconSize">
              <size>
