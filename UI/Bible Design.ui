@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1258</width>
-    <height>869</height>
+    <height>866</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -1219,7 +1219,7 @@ QWidget#scrollAreaWidgetContents{
                <x>0</x>
                <y>0</y>
                <width>1176</width>
-               <height>530</height>
+               <height>527</height>
               </rect>
              </property>
              <property name="maximumSize">

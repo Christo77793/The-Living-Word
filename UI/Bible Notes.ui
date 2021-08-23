@@ -519,7 +519,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>C:/Users/chris/Downloads/Project Icons/share.png</normaloff>C:/Users/chris/Downloads/Project Icons/share.png</iconset>
+              <normaloff>../Images/Buttons/share.png</normaloff>../Images/Buttons/share.png</iconset>
             </property>
            </widget>
           </item>
