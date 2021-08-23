@@ -88,7 +88,7 @@ class MainWindow(Qtw.QMainWindow):
         Function to expand and restore the toggle menu.
         '''
 
-        toggle_frame_length = self.findChild(Qtw.QFrame, "frame_9")
+        toggle_frame_length = self.findChild(Qtw.QFrame, "side_menu_frame")
         toggle_width = toggle_frame_length.width()
 
         max_width = 131
@@ -102,7 +102,7 @@ class MainWindow(Qtw.QMainWindow):
             # Restoring
             set_width_ = min_width
 
-        menu_bar_frame = self.findChild(Qtw.QFrame, "frame_9")
+        menu_bar_frame = self.findChild(Qtw.QFrame, "side_menu_frame")
 
         self.animation = Qtc.QPropertyAnimation(menu_bar_frame, b"minimumWidth")
         self.animation.setDuration(300)  # duration in ms
