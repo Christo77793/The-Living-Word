@@ -91,8 +91,8 @@ class MainWindow(Qtw.QMainWindow):
         toggle_frame_length = self.findChild(Qtw.QFrame, "side_menu_frame")
         toggle_width = toggle_frame_length.width()
 
-        max_width = 131
-        min_width = 47
+        max_width = 150
+        min_width = 60
 
         if toggle_width == min_width:
             # Expanding

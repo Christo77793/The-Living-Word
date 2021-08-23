@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1098</width>
+    <width>1258</width>
     <height>869</height>
    </rect>
   </property>
@@ -54,416 +54,213 @@
      <widget class="QFrame" name="side_menu_frame">
       <property name="minimumSize">
        <size>
-        <width>47</width>
+        <width>60</width>
         <height>0</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>47</width>
+        <width>60</width>
         <height>16777215</height>
        </size>
       </property>
       <property name="styleSheet">
        <string notr="true">#side_menu_frame{
-/*	background-color: rgb(171, 196, 255);*/
 	background-color: rgb(0, 59, 115);
 }
 
 QPushButton{
-/*	background-color: rgba(204, 219, 253, 1);*/
 	border-radius: 5px;
 }
-/*
-QPushButton:hover{
-	background-color: rgb(198, 213, 245);
-	background-color: rgb(0, 77, 149);
-	border-radius: 5px;
-}*/</string>
+
+QLabel{
+	color: rgb(255, 255, 255);
+}</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <property name="spacing">
         <number>0</number>
        </property>
        <property name="leftMargin">
-        <number>3</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
         <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>3</number>
+        <number>5</number>
        </property>
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <item alignment="Qt::AlignLeft">
-        <widget class="QFrame" name="menu_frame">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>4</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>3</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignLeft">
-           <widget class="QPushButton" name="menuButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>80</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>&lt;div style=&quot;color:black&quot;&gt;Menu&lt;/div&gt;</string>
-            </property>
-            <property name="text">
-             <string> Menu</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../Images/Buttons/menu.png</normaloff>../Images/Buttons/menu.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>55</width>
-              <height>55</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item alignment="Qt::AlignLeft">
-        <widget class="QFrame" name="notes_frame">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>4</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>3</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignLeft">
-           <widget class="QPushButton" name="notesButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>80</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>&lt;div style=&quot;color:black&quot;&gt;Notes&lt;/div&gt;</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">/*QPushButton{
-	background-color: rgba(204, 219, 253, 1);
-	border-radius: 25px;
-}
-
-QPushButton:hover{
-	background-color: rgb(198, 213, 245);
-	border-radius: 25px;
-}*/</string>
-            </property>
-            <property name="text">
-             <string> Notes</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../Images/Buttons/notes.png</normaloff>../Images/Buttons/notes.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>55</width>
-              <height>55</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item alignment="Qt::AlignLeft">
-        <widget class="QFrame" name="bookmark_frame">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_10">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>4</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>3</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignLeft">
-           <widget class="QPushButton" name="bookmarkButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>113</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>113</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>&lt;div style=&quot;color:black&quot;&gt;BookMarks&lt;/div&gt;</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string> Bookmarks</string>
-            </property>
-            <property name="icon">
-             <iconset>
-              <normaloff>../Images/Buttons/bookmark.png</normaloff>../Images/Buttons/bookmark.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>55</width>
-              <height>55</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
        <item>
-        <widget class="QFrame" name="gap_frame">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">/*background-color: rgb(0, 255, 127);*/</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-        </widget>
-       </item>
-       <item alignment="Qt::AlignLeft">
-        <widget class="QFrame" name="about_frame">
+        <widget class="QFrame" name="gridFrame">
          <property name="minimumSize">
           <size>
-           <width>0</width>
-           <height>95</height>
+           <width>150</width>
+           <height>0</height>
           </size>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
-          <property name="spacing">
-           <number>0</number>
-          </property>
+         <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">
-           <number>4</number>
+           <number>0</number>
           </property>
           <property name="topMargin">
-           <number>0</number>
+           <number>15</number>
           </property>
           <property name="rightMargin">
-           <number>3</number>
+           <number>25</number>
           </property>
           <property name="bottomMargin">
+           <number>15</number>
+          </property>
+          <property name="horizontalSpacing">
            <number>0</number>
           </property>
-          <item alignment="Qt::AlignLeft">
-           <widget class="QPushButton" name="aboutButton">
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>80</width>
-              <height>75</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="toolTip">
-             <string>&lt;div style=&quot;color:black&quot;&gt;About&lt;/div&gt;</string>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
+          <property name="verticalSpacing">
+           <number>35</number>
+          </property>
+          <item row="2" column="0" alignment="Qt::AlignLeft">
+           <widget class="QPushButton" name="notesButton">
             <property name="text">
-             <string> About</string>
+             <string/>
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../Images/Buttons/user.png</normaloff>../Images/Buttons/user.png</iconset>
+              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/notes.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/notes.png</iconset>
             </property>
             <property name="iconSize">
              <size>
               <width>55</width>
               <height>55</height>
              </size>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" alignment="Qt::AlignLeft">
+           <widget class="QPushButton" name="bookmarkButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/bookmark.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/bookmark.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>55</width>
+              <height>55</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" alignment="Qt::AlignLeft">
+           <widget class="QPushButton" name="aboutButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/user.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/user.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>55</width>
+              <height>55</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="notes_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Notes</string>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="bookmarks_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Bookmarks</string>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1" alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="about_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>About</string>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" alignment="Qt::AlignLeft">
+           <widget class="QPushButton" name="menuButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/menu.png</normaloff>D:/Projects/Python Projects/The Living Word/Images/Buttons/menu.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>55</width>
+              <height>55</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="menu_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Menu</string>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QFrame" name="gap_frame">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
             </property>
            </widget>
           </item>
@@ -1382,16 +1179,16 @@ QWidget#scrollAreaWidgetContents{
            <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>15</number>
+           <number>11</number>
           </property>
           <property name="topMargin">
            <number>7</number>
           </property>
           <property name="rightMargin">
-           <number>15</number>
+           <number>11</number>
           </property>
           <property name="bottomMargin">
-           <number>15</number>
+           <number>11</number>
           </property>
           <item>
            <widget class="QScrollArea" name="scrollableArea">
@@ -1421,8 +1218,8 @@ QWidget#scrollAreaWidgetContents{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1021</width>
-               <height>526</height>
+               <width>1176</width>
+               <height>530</height>
               </rect>
              </property>
              <property name="maximumSize">
