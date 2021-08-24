@@ -20,12 +20,7 @@
    <string>The Living Word</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/*QPushButton{
-	background-color: rgba(171, 196, 255, 1);
-	border-radius: 60px;
-}
-*/
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="maximumSize">
@@ -33,6 +28,11 @@
      <width>16777215</width>
      <height>16777215</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">#centralwidget{
+	border-radius: 35px;
+}</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_5">
     <property name="spacing">
@@ -54,28 +54,37 @@
      <widget class="QFrame" name="side_menu_frame">
       <property name="minimumSize">
        <size>
-        <width>60</width>
+        <width>68</width>
         <height>0</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>60</width>
+        <width>68</width>
         <height>16777215</height>
        </size>
       </property>
       <property name="styleSheet">
        <string notr="true">#side_menu_frame{
-	background-color: rgb(0, 59, 115);
+	background-color: rgb(0, 64, 125);
+/*	background-color: rgb(0, 76, 148);
+	background-color: rgb(0, 59, 115);*/
 }
 
 QPushButton{
-	border-radius: 5px;
+	border-radius: 11px;
+}
+
+QPushButton:hover{
+	background-color: rgb(0, 76, 148)
 }
 
 QLabel{
 	color: rgb(255, 255, 255);
 }</string>
+      </property>
+      <property name="locale">
+       <locale language="English" country="Canada"/>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -88,13 +97,13 @@ QLabel{
         <number>0</number>
        </property>
        <property name="leftMargin">
-        <number>0</number>
+        <number>3</number>
        </property>
        <property name="topMargin">
         <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>5</number>
+        <number>0</number>
        </property>
        <property name="bottomMargin">
         <number>0</number>
@@ -107,27 +116,49 @@ QLabel{
            <height>0</height>
           </size>
          </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">
            <number>0</number>
           </property>
           <property name="topMargin">
-           <number>15</number>
+           <number>9</number>
           </property>
           <property name="rightMargin">
-           <number>25</number>
+           <number>10</number>
           </property>
           <property name="bottomMargin">
-           <number>15</number>
+           <number>9</number>
           </property>
           <property name="horizontalSpacing">
-           <number>0</number>
+           <number>5</number>
           </property>
           <property name="verticalSpacing">
            <number>35</number>
           </property>
+          <item row="4" column="0">
+           <spacer name="verticalSpacer">
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item row="2" column="0" alignment="Qt::AlignLeft">
            <widget class="QPushButton" name="notesButton">
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -145,6 +176,9 @@ QLabel{
           </item>
           <item row="3" column="0" alignment="Qt::AlignLeft">
            <widget class="QPushButton" name="bookmarkButton">
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -160,8 +194,47 @@ QLabel{
             </property>
            </widget>
           </item>
+          <item row="3" column="1" alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="bookmarks_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
+            <property name="text">
+             <string>Bookmarks</string>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="notes_label">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
+            <property name="text">
+             <string>Notes</string>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
           <item row="5" column="0" alignment="Qt::AlignLeft">
            <widget class="QPushButton" name="aboutButton">
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -177,42 +250,15 @@ QLabel{
             </property>
            </widget>
           </item>
-          <item row="2" column="1" alignment="Qt::AlignLeft">
-           <widget class="QLabel" name="notes_label">
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Notes</string>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1" alignment="Qt::AlignLeft">
-           <widget class="QLabel" name="bookmarks_label">
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Bookmarks</string>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
           <item row="5" column="1" alignment="Qt::AlignLeft">
            <widget class="QLabel" name="about_label">
             <property name="font">
              <font>
               <pointsize>9</pointsize>
              </font>
+            </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
             </property>
             <property name="text">
              <string>About</string>
@@ -224,6 +270,9 @@ QLabel{
           </item>
           <item row="1" column="0" alignment="Qt::AlignLeft">
            <widget class="QPushButton" name="menuButton">
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -246,21 +295,11 @@ QLabel{
               <pointsize>9</pointsize>
              </font>
             </property>
-            <property name="text">
-             <string>Menu</string>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
             </property>
             <property name="margin">
              <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QFrame" name="gap_frame">
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
             </property>
            </widget>
           </item>
@@ -272,6 +311,9 @@ QLabel{
     </item>
     <item>
      <widget class="QFrame" name="main_frame">
+      <property name="locale">
+       <locale language="English" country="Canada"/>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
@@ -307,6 +349,9 @@ QLabel{
 	background-color: rgb(96, 163, 217);
 }</string>
          </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -331,6 +376,9 @@ QLabel{
           </property>
           <item>
            <widget class="QFrame" name="bible_promise_header">
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -342,40 +390,197 @@ QLabel{
               <number>7</number>
              </property>
              <property name="leftMargin">
-              <number>11</number>
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
              </property>
              <property name="rightMargin">
-              <number>11</number>
+              <number>0</number>
              </property>
              <item>
-              <widget class="QLabel" name="bible_promise_heading">
+              <widget class="QFrame" name="app_title">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>75</height>
+                 <height>0</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>75</height>
-                </size>
+               <property name="styleSheet">
+                <string notr="true">#app_title{
+/*	background-color: rgb(0, 76, 148);
+	background-color: rgb(0, 59, 115);*/
+	background-color: rgb(0, 64, 125);
+}</string>
                </property>
-               <property name="font">
-                <font>
-                 <family>Harlow Solid Italic</family>
-                 <pointsize>29</pointsize>
-                 <weight>50</weight>
-                 <italic>true</italic>
-                 <bold>false</bold>
-                </font>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
                </property>
-               <property name="text">
-                <string>The Living Word</string>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
                </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
                </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>5</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>5</number>
+                </property>
+                <item>
+                 <widget class="QFrame" name="gap_frame">
+                  <property name="locale">
+                   <locale language="English" country="Canada"/>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="app_name">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>65</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>65</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Gabriola</family>
+                    <pointsize>29</pointsize>
+                    <weight>50</weight>
+                    <italic>false</italic>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(255, 255, 255)</string>
+                  </property>
+                  <property name="locale">
+                   <locale language="English" country="Canada"/>
+                  </property>
+                  <property name="text">
+                   <string>The Living Word</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight">
+                 <widget class="QFrame" name="window_manipulation_buttons">
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	border-radius: 0px;
+}</string>
+                  </property>
+                  <property name="locale">
+                   <locale language="English" country="Canada"/>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <property name="spacing">
+                    <number>10</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>8</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="minimiseButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Minimise&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="locale">
+                      <locale language="English" country="Canada"/>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../Images/Buttons/minimise.png</normaloff>../Images/Buttons/minimise.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="restoreButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Restore&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="locale">
+                      <locale language="English" country="Canada"/>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../Images/Buttons/restore.png</normaloff>../Images/Buttons/restore.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="closeButton">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Close&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="locale">
+                      <locale language="English" country="Canada"/>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../Images/Buttons/close.png</normaloff>../Images/Buttons/close.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>
@@ -397,6 +602,9 @@ QLabel{
                  <family>Palatino Linotype</family>
                  <pointsize>11</pointsize>
                 </font>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
                </property>
                <property name="text">
                 <string>-Promises Shown Here-</string>
@@ -444,6 +652,9 @@ QComboBox {
 	border-radius: 10px;
 }*/</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -490,6 +701,9 @@ QComboBox {
                </property>
                <property name="toolTip">
                 <string>Books of The Bible</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
                </property>
                <property name="frame">
                 <bool>true</bool>
@@ -848,6 +1062,9 @@ QComboBox {
                <property name="toolTip">
                 <string>Chapters of the book</string>
                </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
                <property name="frame">
                 <bool>true</bool>
                </property>
@@ -880,6 +1097,9 @@ QComboBox {
                </property>
                <property name="toolTip">
                 <string>Available Translations</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
                </property>
                <property name="frame">
                 <bool>true</bool>
@@ -942,6 +1162,9 @@ QComboBox {
 	background-color: rgba(237, 242, 251, 1);
 }*/</string>
          </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -966,6 +1189,9 @@ QComboBox {
           </property>
           <item>
            <widget class="QFrame" name="frame_6">
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -1000,6 +1226,9 @@ QPushButton:hover{
 	background-color: rgb(0, 110, 170);
 }
 </string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
                </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
@@ -1048,6 +1277,9 @@ QPushButton:hover{
                   <property name="styleSheet">
                    <string notr="true">color: rgb(255, 255, 255);</string>
                   </property>
+                  <property name="locale">
+                   <locale language="English" country="Canada"/>
+                  </property>
                   <property name="text">
                    <string>Previous</string>
                   </property>
@@ -1086,6 +1318,9 @@ QPushButton:hover{
                   </property>
                   <property name="styleSheet">
                    <string notr="true">color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="locale">
+                   <locale language="English" country="Canada"/>
                   </property>
                   <property name="text">
                    <string>Get Verses</string>
@@ -1126,6 +1361,9 @@ QPushButton:hover{
                   <property name="styleSheet">
                    <string notr="true">color: rgb(255, 255, 255);
 </string>
+                  </property>
+                  <property name="locale">
+                   <locale language="English" country="Canada"/>
                   </property>
                   <property name="text">
                    <string>Next</string>
@@ -1168,6 +1406,9 @@ QWidget#scrollAreaWidgetContents{
 	background-color: rgb(184, 207, 229);
 }</string>
          </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
@@ -1179,16 +1420,16 @@ QWidget#scrollAreaWidgetContents{
            <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>11</number>
+           <number>15</number>
           </property>
           <property name="topMargin">
-           <number>7</number>
+           <number>15</number>
           </property>
           <property name="rightMargin">
-           <number>11</number>
+           <number>15</number>
           </property>
           <property name="bottomMargin">
-           <number>11</number>
+           <number>15</number>
           </property>
           <item>
            <widget class="QScrollArea" name="scrollableArea">
@@ -1200,6 +1441,9 @@ QWidget#scrollAreaWidgetContents{
             </property>
             <property name="styleSheet">
              <string notr="true"/>
+            </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
@@ -1218,8 +1462,8 @@ QWidget#scrollAreaWidgetContents{
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1176</width>
-               <height>527</height>
+               <width>1160</width>
+               <height>524</height>
               </rect>
              </property>
              <property name="maximumSize">
@@ -1340,6 +1584,9 @@ QScrollbar::add-page:vertical, QScrollBar::sub-page:vertical{
                 </property>
                 <property name="styleSheet">
                  <string notr="true"/>
+                </property>
+                <property name="locale">
+                 <locale language="English" country="Canada"/>
                 </property>
                 <property name="text">
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Click on Get Verses to start viewing verses.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Right Click to:&lt;/p&gt;&lt;p&gt;1. Add a BookMark&lt;/p&gt;&lt;p&gt;2. Clear the screen&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Shortcuts:&lt;/p&gt;&lt;p&gt;1. Enter : Get Verses&lt;/p&gt;&lt;p&gt;2. -&amp;gt; : Next&lt;/p&gt;&lt;p&gt;3. &amp;lt;- : Previous&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>

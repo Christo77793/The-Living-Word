@@ -29,8 +29,17 @@ class MainWindow(Qtw.QMainWindow):
         # setting a window icon
         self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_main.png"))
 
+        self.app_title.mouseMoveEvent = self.move_with_click_title_bar
+
+        self.setWindowFlag(Qtc.Qt.FramelessWindowHint)
         self.show()  # show the UI
         self.showMaximized()  # loads the app in full-screen
+
+        # Window Manipulation Buttons
+
+        self.minimiseButton.clicked.connect(lambda: self.showMinimized())
+        self.restoreButton.clicked.connect(lambda: self.change_window_size())
+        self.closeButton.clicked.connect(lambda: self.close())
 
         # Toggle Menu Buttons
 
@@ -83,6 +92,26 @@ class MainWindow(Qtw.QMainWindow):
         verses_label.setContextMenuPolicy(Qtc.Qt.CustomContextMenu)
         verses_label.customContextMenuRequested.connect(self.verses_custom_context_menu)
 
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+
+    def move_with_click_title_bar(self, event):
+        '''
+        Function to move the app as the user clicks and drags on the title bar
+        '''
+        if event.buttons() == Qtc.Qt.LeftButton:
+            self.move(self.pos() + event.globalPos() - self.dragPos)
+            self.dragPos = event.globalPos()
+            event.accept()
+
+    def change_window_size(self):
+
+        if self.isMaximized():
+            self.showNormal()
+
+        else:
+            self.showMaximized()
+
     def change_menu_width(self):
         '''
         Function to expand and restore the toggle menu.
@@ -91,8 +120,8 @@ class MainWindow(Qtw.QMainWindow):
         toggle_frame_length = self.findChild(Qtw.QFrame, "side_menu_frame")
         toggle_width = toggle_frame_length.width()
 
-        max_width = 150
-        min_width = 60
+        max_width = 156
+        min_width = 68
 
         if toggle_width == min_width:
             # Expanding
