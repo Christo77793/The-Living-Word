@@ -61,11 +61,14 @@ QPushButton:hover{
 	border-radius: 15px;
 }</string>
       </property>
+      <property name="locale">
+       <locale language="English" country="Canada"/>
+      </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Plain</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <property name="spacing">
@@ -97,11 +100,14 @@ QPushButton:hover{
          <property name="styleSheet">
           <string notr="true"/>
          </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Plain</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">
@@ -159,6 +165,9 @@ QPushButton:hover{
 	background-color: rgb(163, 187, 243);
 }</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string>B</string>
             </property>
@@ -196,6 +205,9 @@ QPushButton:hover{
 QPushButton:hover{
 	background-color: rgb(163, 187, 243);
 }</string>
+            </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
             </property>
             <property name="text">
              <string>U</string>
@@ -235,6 +247,9 @@ QPushButton:hover{
 	background-color: rgb(163, 187, 243);
 }</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string>I</string>
             </property>
@@ -260,6 +275,9 @@ QPushButton:hover{
               <pointsize>9</pointsize>
              </font>
             </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
            </widget>
           </item>
           <item row="0" column="5">
@@ -282,6 +300,9 @@ QPushButton:hover{
               <pointsize>9</pointsize>
              </font>
             </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
            </widget>
           </item>
          </layout>
@@ -295,11 +316,14 @@ QPushButton:hover{
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
+      <property name="locale">
+       <locale language="English" country="Canada"/>
+      </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Plain</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <property name="spacing">
@@ -319,6 +343,15 @@ QPushButton:hover{
        </property>
        <item>
         <widget class="QScrollArea" name="scrollArea">
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -327,8 +360,8 @@ QPushButton:hover{
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>1082</width>
-            <height>680</height>
+            <width>1084</width>
+            <height>688</height>
            </rect>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout">
@@ -355,6 +388,9 @@ QPushButton:hover{
                <pointsize>13</pointsize>
               </font>
              </property>
+             <property name="locale">
+              <locale language="English" country="Canada"/>
+             </property>
             </widget>
            </item>
           </layout>
@@ -375,11 +411,14 @@ QPushButton:hover{
       <property name="styleSheet">
        <string notr="true"/>
       </property>
+      <property name="locale">
+       <locale language="English" country="Canada"/>
+      </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Plain</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
@@ -406,6 +445,9 @@ QPushButton:hover{
            <weight>75</weight>
            <bold>true</bold>
           </font>
+         </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
          </property>
          <property name="text">
           <string>Quick Access</string>
@@ -437,11 +479,14 @@ QPushButton:hover{
 	border-radius: 25px;
 }</string>
          </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Plain</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="spacing">
@@ -482,6 +527,9 @@ QPushButton:hover{
             <property name="toolTip">
              <string>Undo</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -514,6 +562,9 @@ QPushButton:hover{
             <property name="toolTip">
              <string>Share</string>
             </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -545,6 +596,9 @@ QPushButton:hover{
             </property>
             <property name="toolTip">
              <string>Redo</string>
+            </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
             </property>
             <property name="text">
              <string/>
