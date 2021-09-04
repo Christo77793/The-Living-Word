@@ -1,5 +1,6 @@
-from sqlite_add_bookmark_bible import *
-from sqlite_bible import *
+from App.Bookmark_Functions.sqlite_add_bookmark_bible import *
+# from sqlite_bible import *
+from App.SQLite.sqlite_bible import *
 import sys
 import os
 from PyQt5 import uic

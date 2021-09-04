@@ -1,5 +1,5 @@
 # from bible import MainWindow
-from bookmark_popup_bible import *
+from App.Bookmark_Functions.bookmark_popup_bible import *
 import sqlite3
 import sys
 from PyQt5 import uic

@@ -1,7 +1,6 @@
-from notes_bible import *
-from bookmark_popup_bible import *
-from bookmarks_bible import *
-from sqlite_bible import *
+from Notes import *
+from Bookmark_Functions import *
+from SQLite import *
 import sys
 import random
 import time
