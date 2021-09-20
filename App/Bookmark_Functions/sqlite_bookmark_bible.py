@@ -1,22 +1,29 @@
 import sqlite3
 
+BM_DB_LOCATION = r"Bible Database\bookmarked_verses.db"
+MAIN_DB_LOCATION = r"Bible Database\bible_database.db"
 
-# # Code to create bookmarked_verses database file
-# conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
-#
-# c = conn.cursor()
-#
-# c.execute("""
-#     Create Table bookmarked_verses (
-#         book_name text,
-#         book_chapter integer,
-#         book_verse_number integer,
-#         verse_bookmarked text,
-#         translation_name text)
-# """)
-#
-# conn.commit()
-# conn.close()
+
+def create_bookmark_db():
+    '''
+    Code to create bookmarked_verses database file
+    '''
+
+    conn = sqlite3.connect(BM_DB_LOCATION)
+
+    c = conn.cursor()
+
+    c.execute("""
+        Create Table bookmarked_verses (
+            book_name text,
+            book_chapter integer,
+            book_verse_number integer,
+            verse_bookmarked text,
+            translation_name text)
+    """)
+
+    conn.commit()
+    conn.close()
 
 
 def add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text, translation_name):
@@ -30,7 +37,7 @@ def add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text
     :param: translation_name -> Translation Name
     '''
 
-    conn = sqlite3.connect(r"Bible Database\bookmarked_verses.db")
+    conn = sqlite3.connect(BM_DB_LOCATION)
     c = conn.cursor()
 
     if type(book_name) is not str:

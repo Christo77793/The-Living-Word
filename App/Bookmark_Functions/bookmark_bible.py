@@ -1,8 +1,7 @@
-from App.Bookmark_Functions.sqlite_add_bookmark_bible import *
-# from sqlite_bible import *
+from App.Bookmark_Functions.sqlite_bookmark_bible import *
 from App.SQLite.sqlite_bible import *
+import sqlite3
 import sys
-import os
 from PyQt5 import uic
 from PyQt5 import QtWidgets as Qtw
 from PyQt5 import QtGui as Qtg
@@ -13,18 +12,28 @@ import cgitb
 
 cgitb.enable(format='text')
 
+DB_LOCATION = r"D:\Projects\Python Projects\The Living Word\App\Bible Database\bookmarked_verses.db"
 
-# noinspection PyMethodMayBeStatic,PyAttributeOutsideInit
-class BookMarkPopUp(Qtw.QMainWindow):
-    def __init__(self, name, chapter, translation):
-        super().__init__()  # avoid code redundancy
 
-        uic.loadUi(r"UI\BookMark Popup.ui", self)
+class ShowBookMarks(Qtw.QWidget):
+    def __init__(self, current_name, current_chapter, current_translation):
+        super().__init__()
+
+        # loading the application's UI {stored as XML format}
+        uic.loadUi(r"UI\Bookmarks Function.ui", self)
+
+        name = current_name
+        chapter = current_chapter
+        translation = current_translation
 
         # setting a window icon
-        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_add_bookmark.png"))
+        self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_view_bookmark.png"))
 
         self.show()  # show the UI
+
+        self.load_data()  # calls the load data function to load bookmarked verses
+
+        self.total_count = self.tableWidget.rowCount()  # getting the count of the total number of rows
 
         book_name = self.findChild(Qtw.QComboBox, "bookName")
         book_name.setCurrentIndex(name)
@@ -44,8 +53,44 @@ class BookMarkPopUp(Qtw.QMainWindow):
         translation_name.setCurrentIndex(translation)
         translation_name.currentIndexChanged.connect(self.show_selected_verse)  # Automatically update the verse based on translation selected
 
-        add_bookmark = self.findChild(Qtw.QPushButton, "addBookMark")
-        add_bookmark.clicked.connect(self.bookmark_verses)
+        # Add
+        add = self.findChild(Qtw.QPushButton, "addButton")
+        add.clicked.connect(self.bookmark_verses)
+
+        # Delete
+        delete = self.findChild(Qtw.QPushButton, "deleteButton")
+        delete.clicked.connect(self.remove_data)
+
+    def load_data(self):
+        '''
+        Function to first reset the column length then to load all of the verses stored in the bookmarked_verses database and finally
+        resize individual rows according to their content
+        '''
+
+        # resizes the column length
+        self.tableWidget.horizontalHeader().setSectionResizeMode(0, Qtw.QHeaderView.ResizeToContents)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(1, Qtw.QHeaderView.ResizeToContents)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(2, Qtw.QHeaderView.ResizeToContents)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(3, Qtw.QHeaderView.Stretch)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(4, Qtw.QHeaderView.ResizeToContents)
+
+        # collects verses from db
+        conn = sqlite3.connect(DB_LOCATION)
+
+        cursor = conn.cursor()
+
+        sql_command = "SELECT * FROM bookmarked_verses"
+
+        result = cursor.execute(f'''{sql_command}''')
+
+        for row_number, row_data in enumerate(result):
+            self.tableWidget.insertRow(row_number)  # sets the 'nth' row
+
+            for column_number, column_data in enumerate(row_data):
+                self.tableWidget.setItem(row_number, column_number, Qtw.QTableWidgetItem(str(column_data)))  # set the respective data in each column of the row
+
+        # resizes rows according to its content
+        self.tableWidget.resizeRowsToContents()
 
     def bookmark_verses(self):
         '''
@@ -67,16 +112,71 @@ class BookMarkPopUp(Qtw.QMainWindow):
         # Verse Text
         verse_text = self.verseText.toPlainText()
 
-        process_status = self.findChild(Qtw.QLabel, "processStatus")
+        process_status = self.findChild(Qtw.QLabel, "status_text")
 
         try:
             add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text, translation_name)
             process_status.setText("Added BookMark")
             process_status.setStyleSheet("color: green")
 
+            while self.tableWidget.rowCount() > 0:
+                self.tableWidget.removeRow(0)
+
+            self.load_data()
+
         except:
             process_status.setText("Failed to Add")
             process_status.setStyleSheet("color: red")
+
+    def remove_data(self):
+        '''
+        Function to delete a verse from the bookmarked_verses database.
+        '''
+
+        if self.total_count > 0:  # allow to delete bookmarks only if the total count is more than 0
+
+            try:
+                conn = sqlite3.connect(DB_LOCATION)
+
+                cursor = conn.cursor()
+
+                # Pop-Up to select the row number to be deleted
+
+                widget = Qtw.QWidget()
+
+                # User inputs the row number to be deleted
+                row_ID = Qtw.QInputDialog.getInt(widget, "Delete BookMark", "Select BookMark number: ", min=1, max=self.total_count)
+                row_ID = row_ID[0]
+
+                cursor.execute(f'''DELETE FROM bookmarked_verses WHERE ROWID = {row_ID}''')
+
+                conn.commit()
+                conn.close()
+
+            except:
+                # if deleting the verse from the database fails
+                self.status_text.setText("Failed To Delete")
+                self.status_text.setStyleSheet("color: red")
+
+            else:
+                self.tableWidget.removeRow(row_ID - 1)  # removes the deleted row from the QTableWidget
+                self.total_count = self.tableWidget.rowCount()
+
+                if self.total_count == 0:
+                    # Deleting since count is now 0
+
+                    conn = sqlite3.connect(DB_LOCATION)
+
+                    cursor = conn.cursor()
+
+                    cursor.execute(f'''DELETE FROM bookmarked_verses''')
+
+                    conn.commit()
+                    conn.close()
+
+        else:
+            self.status_text.setText("Nothing to delete")
+            self.status_text.setStyleSheet("color: black")
 
     def update_chapter_list(self):
         '''
@@ -134,5 +234,5 @@ class BookMarkPopUp(Qtw.QMainWindow):
 
 if __name__ == "__main__":
     app = Qtw.QApplication(sys.argv)
-    bookmark_window = BookMarkPopUp()
+    show_bookmarks = ShowBookMarks()
     sys.exit(app.exec())

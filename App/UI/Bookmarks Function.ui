@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BookMarks_PopUp</class>
+ <widget class="QWidget" name="BookMarks_PopUp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1087</width>
+    <height>727</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#BookMarks_PopUp{
+	background-color: rgb(215, 227, 252);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="title_frame">
+     <property name="locale">
+      <locale language="English" country="Canada"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="frame_5">
+        <property name="locale">
+         <locale language="English" country="Canada"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QLabel" name="app_title">
+        <property name="font">
+         <font>
+          <family>Haettenschweiler</family>
+          <pointsize>29</pointsize>
+          <italic>false</italic>
+         </font>
+        </property>
+        <property name="locale">
+         <locale language="English" country="Canada"/>
+        </property>
+        <property name="text">
+         <string>Your Bookmarks</string>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignRight">
+       <widget class="QFrame" name="windowButtons_frame">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	border-radius: 0px;
+}</string>
+        </property>
+        <property name="locale">
+         <locale language="English" country="Canada"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>8</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>8</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="minimiseButton">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Minimise&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/minimise.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/minimise.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="restoreButton">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Restore&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/restore.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/restore.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="closeButton">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Close&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/close.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/close.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="locale">
+      <locale language="English" country="Canada"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QFrame" name="bookmarks_table_frame">
+        <property name="locale">
+         <locale language="English" country="Canada"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QTableWidget" name="tableWidget">
+           <property name="minimumSize">
+            <size>
+             <width>655</width>
+             <height>655</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>MS Shell Dlg 2</family>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+	outline: 0;
+	background-color: rgb(187, 197, 218);
+}
+
+QTableWidget::item {
+	background-color: rgb(187, 197, 218);
+	color: rgb(0, 0, 0);
+	padding: 5px 5px 5px 5px;
+}
+
+QTableWidget::item::selected {
+	padding: 5px 5px 5px 5px;
+	background-color: rgb(198, 213, 245);
+	color: rgb(0, 0, 0);
+}
+
+QAbstractItemView {
+    alternate-background-color: #3A3939;
+    padding: 1px;
+}
+
+QHeaderView {
+    border: transparent;
+	background: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+QHeaderView::section  {
+    background-color: #3A3939;
+    color: silver;
+    padding: 5px;
+    border: 1px solid #6c6c6c;
+    border-radius: 0px;
+    text-align: center;
+}
+
+QTableCornerButton::section {
+    background-color: #3A3939;
+    color: silver;
+    padding: 5px;
+    border: 1px solid #6c6c6c;
+    border-radius: 0px;
+}
+
+QVerticalView {
+    border: transparent;
+	background: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+QVerticalView::section  {
+    background-color: #3A3939;
+    color: silver;
+    padding: 5px;
+    border: 1px solid #6c6c6c;
+    border-radius: 0px;
+    text-align: center;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <property name="lineWidth">
+            <number>0</number>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="sizeAdjustPolicy">
+            <enum>QAbstractScrollArea::AdjustToContents</enum>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="showDropIndicator" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="selectionMode">
+            <enum>QAbstractItemView::SingleSelection</enum>
+           </property>
+           <property name="textElideMode">
+            <enum>Qt::ElideMiddle</enum>
+           </property>
+           <property name="showGrid">
+            <bool>true</bool>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::SolidLine</enum>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="cornerButtonEnabled">
+            <bool>false</bool>
+           </property>
+           <attribute name="horizontalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="horizontalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderCascadingSectionResizes">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Book</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Chapter</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Verse</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Text</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Translation</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="manipulate_bookmarks_frame">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>405</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="locale">
+         <locale language="English" country="Canada"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>9</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="frame_2">
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>7</number>
+            </property>
+            <item row="1" column="0" alignment="Qt::AlignLeft">
+             <widget class="QLabel" name="chapter_number_text">
+              <property name="font">
+               <font>
+                <family>Footlight MT Light</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string>Chapter Number</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" alignment="Qt::AlignLeft">
+             <widget class="QLabel" name="verse_number_text">
+              <property name="font">
+               <font>
+                <family>Footlight MT Light</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string>Verse Number</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" alignment="Qt::AlignLeft">
+             <widget class="QLabel" name="book_name_text">
+              <property name="font">
+               <font>
+                <family>Footlight MT Light</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string>Book Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="chapterNumber">
+              <property name="minimumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Chapters of the book</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" alignment="Qt::AlignLeft">
+             <widget class="QLabel" name="translation_name_text">
+              <property name="font">
+               <font>
+                <family>Footlight MT Light</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string>Translation Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" alignment="Qt::AlignLeft">
+             <widget class="QLabel" name="verse_content_text">
+              <property name="font">
+               <font>
+                <family>Footlight MT Light</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string>Verse Text</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QTextEdit" name="verseText">
+              <property name="minimumSize">
+               <size>
+                <width>255</width>
+                <height>105</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>255</width>
+                <height>105</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QComboBox" name="translationName">
+              <property name="minimumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="focusPolicy">
+               <enum>Qt::WheelFocus</enum>
+              </property>
+              <property name="acceptDrops">
+               <bool>false</bool>
+              </property>
+              <property name="toolTip">
+               <string>Available Translations</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>KJV</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>ASV</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>BBE</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>WBT</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>YLT</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>DARBY</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="verseNumber">
+              <property name="minimumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="bookName">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>255</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Books of The Bible</string>
+              </property>
+              <property name="frame">
+               <bool>true</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Genesis</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Exodus</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Leviticus</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Numbers</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Deuteronomy</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Joshua</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Judges</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Ruth</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 Samuel</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 Samuel</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 Kings</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 Kings</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 Chronicles</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 Chronicles</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Ezra</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Nehemiah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Esther</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Job</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Psalms</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Proverbs</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Ecclesiastes</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Song of Solomon</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Isaiah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Jeremiah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Lamentations</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Ezekiel</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Daniel</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Hosea</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Joel</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Amos</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Obadiah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Jonah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Micah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Nahum</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Habakkuk</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Zephaniah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Haggai</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Zechariah</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Malachi</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Matthew</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Mark</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Luke</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>John</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Acts</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Romans</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 Corinthians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 Corinthians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Galatians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Ephesians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Philippians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Colossians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 Thessalonians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 Thessalonians</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 Timothy</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 Timothy</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Titus</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Philemon</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Hebrews</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>James</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 Peter</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 Peter</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 John</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2 John</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>3 John</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Jude</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Revelation</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="button_frame">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgba(204, 219, 253, 1);
+	border-radius: 25px;
+}
+
+QPushButton:hover{
+	background-color: rgb(198, 213, 245);
+	border-radius: 25px;
+}</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <property name="leftMargin">
+             <number>15</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>15</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="addButton">
+              <property name="minimumSize">
+               <size>
+                <width>125</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>125</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Goudy Old Style</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Add BookMark</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>ADD</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/add.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/add.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>55</width>
+                <height>55</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="deleteButton">
+              <property name="minimumSize">
+               <size>
+                <width>125</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>125</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Goudy Old Style</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>Delete BookMark</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>DELETE</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/delete.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/delete.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>55</width>
+                <height>55</height>
+               </size>
+              </property>
+              <property name="shortcut">
+               <string>D</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignBottom">
+          <widget class="QLabel" name="status_text">
+           <property name="font">
+            <font>
+             <family>Harlow Solid Italic</family>
+             <pointsize>11</pointsize>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="text">
+            <string>Status (deleted or added)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

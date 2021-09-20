@@ -28,6 +28,10 @@ class MainWindow(Qtw.QMainWindow):
         # setting a window icon
         self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_main.png"))
 
+        # checking if bookmark db exists or not
+        self.check_bookmark_db()
+
+        # setting the title frame to be clicked on and move the app with it
         self.app_title.mouseMoveEvent = self.move_with_click_title_bar
 
         self.setWindowFlag(Qtc.Qt.FramelessWindowHint)
@@ -90,6 +94,16 @@ class MainWindow(Qtw.QMainWindow):
         verses_label = self.findChild(Qtw.QLabel, "versesLabel")  # instance of verses label
         verses_label.setContextMenuPolicy(Qtc.Qt.CustomContextMenu)
         verses_label.customContextMenuRequested.connect(self.verses_custom_context_menu)
+
+    def check_bookmark_db(self):
+        '''
+        Function to check if BookMarks database exists or not
+        '''
+
+        import os.path
+
+        if not os.path.isfile(r"Bible Database\bookmarked_verses.db"):
+            create_bookmark_db()
 
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
@@ -403,7 +417,8 @@ class MainWindow(Qtw.QMainWindow):
         translation = self.findChild(Qtw.QComboBox, "Translation")
         selected_translation = translation.currentIndex()
 
-        self.bookmark_ui = BookMarkPopUp(selected_book, selected_chapter, selected_translation)
+        # self.bookmark_ui = BookMarkPopUp(selected_book, selected_chapter, selected_translation)
+        self.bookmark_ui = ShowBookMarks(selected_book, selected_chapter, selected_translation)
 
     def closeEvent(self, event):
         '''
@@ -460,11 +475,6 @@ class MyThread(Qtc.QThread):
         # called when the app ends
         # noinspection PyAttributeOutsideInit
         self.continue_run = False
-
-
-# object of QApplication represents the state of our apps
-# tt takes a list of command line arguments
-# app = QtWidgets.QApplication([])
 
 
 if __name__ == "__main__":
