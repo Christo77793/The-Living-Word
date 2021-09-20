@@ -12,7 +12,7 @@ import cgitb
 
 cgitb.enable(format='text')
 
-DB_LOCATION = r"D:\Projects\Python Projects\The Living Word\App\Bible Database\bookmarked_verses.db"
+DB_LOCATION = r"Bible Database\bookmarked_verses.db"
 
 
 class ShowBookMarks(Qtw.QWidget):
