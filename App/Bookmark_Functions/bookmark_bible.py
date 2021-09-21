@@ -29,7 +29,18 @@ class ShowBookMarks(Qtw.QWidget):
         # setting a window icon
         self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_view_bookmark.png"))
 
+        # setting the title frame to be clicked on and move the app with it
+        self.title_frame.mouseMoveEvent = self.move_with_click_title_bar
+
+        self.setWindowFlag(Qtc.Qt.FramelessWindowHint)
         self.show()  # show the UI
+        self.showMaximized()  # loads the app in full-screen
+
+        # Window Manipulation Buttons
+
+        self.minimiseButton.clicked.connect(lambda: self.showMinimized())
+        self.restoreButton.clicked.connect(lambda: self.change_window_size())
+        self.closeButton.clicked.connect(lambda: self.close())
 
         self.load_data()  # calls the load data function to load bookmarked verses
 
@@ -61,27 +72,60 @@ class ShowBookMarks(Qtw.QWidget):
         delete = self.findChild(Qtw.QPushButton, "deleteButton")
         delete.clicked.connect(self.remove_data)
 
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+
+    def move_with_click_title_bar(self, event):
+        '''
+        Function to move the app as the user clicks and drags on the title bar
+        '''
+        if event.buttons() == Qtc.Qt.LeftButton:
+            self.move(self.pos() + event.globalPos() - self.dragPos)
+            self.dragPos = event.globalPos()
+            event.accept()
+
+    def change_window_size(self):
+
+        if self.isMaximized():
+            self.showNormal()
+
+        else:
+            self.showMaximized()
+
     def load_data(self):
         '''
         Function to first reset the column length then to load all of the verses stored in the bookmarked_verses database and finally
         resize individual rows according to their content
         '''
 
+        # remove all the existing rows
+        while self.tableWidget.rowCount() > 0:
+            self.tableWidget.removeRow(0)
+
         # resizes the column length
         self.tableWidget.horizontalHeader().setSectionResizeMode(0, Qtw.QHeaderView.ResizeToContents)
         self.tableWidget.horizontalHeader().setSectionResizeMode(1, Qtw.QHeaderView.ResizeToContents)
         self.tableWidget.horizontalHeader().setSectionResizeMode(2, Qtw.QHeaderView.ResizeToContents)
-        self.tableWidget.horizontalHeader().setSectionResizeMode(3, Qtw.QHeaderView.Stretch)
-        self.tableWidget.horizontalHeader().setSectionResizeMode(4, Qtw.QHeaderView.ResizeToContents)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(3, Qtw.QHeaderView.ResizeToContents)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(4, Qtw.QHeaderView.Stretch)
+        self.tableWidget.horizontalHeader().setSectionResizeMode(5, Qtw.QHeaderView.ResizeToContents)
 
         # collects verses from db
         conn = sqlite3.connect(DB_LOCATION)
 
         cursor = conn.cursor()
 
-        sql_command = "SELECT * FROM bookmarked_verses"
-
-        result = cursor.execute(f'''{sql_command}''')
+        result = cursor.execute(f'''
+                                    SELECT 
+                                        ROW_NUMBER() OVER(ORDER BY verse_count),
+                                        book_name, 
+                                        book_chapter, 
+                                        book_verse_number, 
+                                        verse_bookmarked, 
+                                        translation_name
+                                    FROM 
+                                        bookmarked_verses
+                                ''')
 
         for row_number, row_data in enumerate(result):
             self.tableWidget.insertRow(row_number)  # sets the 'nth' row
@@ -119,9 +163,6 @@ class ShowBookMarks(Qtw.QWidget):
             process_status.setText("Added BookMark")
             process_status.setStyleSheet("color: green")
 
-            while self.tableWidget.rowCount() > 0:
-                self.tableWidget.removeRow(0)
-
             self.load_data()
 
         except:
@@ -148,7 +189,17 @@ class ShowBookMarks(Qtw.QWidget):
                 row_ID = Qtw.QInputDialog.getInt(widget, "Delete BookMark", "Select BookMark number: ", min=1, max=self.total_count)
                 row_ID = row_ID[0]
 
-                cursor.execute(f'''DELETE FROM bookmarked_verses WHERE ROWID = {row_ID}''')
+                cursor.execute(f'''CREATE TEMP TABLE temp_ AS SELECT verse_count, ROW_NUMBER() OVER(ORDER BY verse_count) AS row_id FROM bookmarked_verses''')
+
+                cursor.execute(f'''
+                                   DELETE FROM bookmarked_verses 
+                                   WHERE 
+                                        verse_count IN (
+                                                       SELECT verse_count 
+                                                       FROM temp_ 
+                                                       WHERE row_id = {row_ID}
+                                                      )
+                                        ''')
 
                 conn.commit()
                 conn.close()
@@ -159,8 +210,6 @@ class ShowBookMarks(Qtw.QWidget):
                 self.status_text.setStyleSheet("color: red")
 
             else:
-                self.tableWidget.removeRow(row_ID - 1)  # removes the deleted row from the QTableWidget
-                self.total_count = self.tableWidget.rowCount()
 
                 if self.total_count == 0:
                     # Deleting since count is now 0
@@ -173,6 +222,8 @@ class ShowBookMarks(Qtw.QWidget):
 
                     conn.commit()
                     conn.close()
+
+                self.load_data()
 
         else:
             self.status_text.setText("Nothing to delete")

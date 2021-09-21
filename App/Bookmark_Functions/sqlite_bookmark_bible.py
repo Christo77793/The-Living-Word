@@ -14,13 +14,14 @@ def create_bookmark_db():
     c = conn.cursor()
 
     c.execute("""
-        Create Table bookmarked_verses (
-            book_name text,
-            book_chapter integer,
-            book_verse_number integer,
-            verse_bookmarked text,
-            translation_name text)
-    """)
+                CREATE TABLE bookmarked_verses (
+                    verse_count integer primary key,
+                    book_name text,
+                    book_chapter integer,
+                    book_verse_number integer,
+                    verse_bookmarked text,
+                    translation_name text)
+            """)
 
     conn.commit()
     conn.close()
@@ -56,13 +57,14 @@ def add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text
         translation_name = str(translation_name)
 
     c.execute(f"""
-                Insert Into bookmarked_verses Values (
+                  INSERT INTO bookmarked_verses Values (
+                    null,
                     '{book_name}',
                      {chapter_number},
                      {verse_number},
-                    '{verse_text}',
+                    "{verse_text}",
                     '{translation_name}')
-                """)
+              """)
 
     conn.commit()
     conn.close()
