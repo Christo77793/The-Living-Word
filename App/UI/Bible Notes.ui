@@ -180,7 +180,7 @@ QPushButton:hover{
             </property>
             <property name="icon">
              <iconset>
-              <normaloff>../Images/Buttons/restore.png</normaloff>../Images/Buttons/restore.png</iconset>
+              <normaloff>../Images/Buttons/window.png</normaloff>../Images/Buttons/window.png</iconset>
             </property>
            </widget>
           </item>
