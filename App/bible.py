@@ -34,7 +34,7 @@ class MainWindow(Qtw.QMainWindow):
         # setting the title frame to be clicked on and move the app with it
         self.app_title.mouseMoveEvent = self.move_with_click_title_bar
 
-        self.setWindowFlag(Qtc.Qt.FramelessWindowHint)
+        self.setWindowFlag(Qtc.Qt.FramelessWindowHint)  # removes standard title
         self.show()  # show the UI
         self.showMaximized()  # loads the app in full-screen
 
@@ -105,6 +105,10 @@ class MainWindow(Qtw.QMainWindow):
         if not os.path.isfile(r"Bible Database\bookmarked_verses.db"):
             create_bookmark_db()
 
+    def mouseDoubleClickEvent(self, event):
+        if event.button() == Qtc.Qt.LeftButton:
+            self.change_window_size()
+
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
@@ -121,9 +125,10 @@ class MainWindow(Qtw.QMainWindow):
 
         if self.isMaximized():
             self.showNormal()
-
+            self.restoreButton.setIcon(Qtg.QIcon(r"Images\Buttons\restore.png"))
         else:
             self.showMaximized()
+            self.restoreButton.setIcon(Qtg.QIcon(r"Images\Buttons\window.png"))
 
     def change_menu_width(self):
         '''
@@ -134,7 +139,7 @@ class MainWindow(Qtw.QMainWindow):
         toggle_width = toggle_frame_length.width()
 
         max_width = 156
-        min_width = 68
+        min_width = 65
 
         if toggle_width == min_width:
             # Expanding
@@ -219,7 +224,7 @@ class MainWindow(Qtw.QMainWindow):
             # verse_list iterates through the verses list
             if verse_list == verses[-1]:
                 # removing extra break if it is the last verse
-                display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}"
                 verses_label.setText(display_verse)
             else:
                 display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
@@ -266,7 +271,7 @@ class MainWindow(Qtw.QMainWindow):
             for verse_list in verses:
                 if verse_list == verses[-1]:
                     # removing extra break if it is the last verse
-                    display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                    display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}"
                     verses_label.setText(display_verse)
                 else:
                     display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
@@ -307,7 +312,7 @@ class MainWindow(Qtw.QMainWindow):
                 for verse_list in verses:
                     if verse_list == verses[-1]:
                         # removing extra break if it is the last verse
-                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}"
                         verses_label.setText(display_verse)
                     else:
                         display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
@@ -331,7 +336,7 @@ class MainWindow(Qtw.QMainWindow):
                 for verse_list in verses:
                     if verse_list == verses[-1]:
                         # removing extra break if it is the last verse
-                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br />"
+                        display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}"
                         verses_label.setText(display_verse)
                     else:
                         display_verse += f"<b style='font-size: large'>{verse_list[3]}:</b> {verse_list[4]}<br /><br />"
@@ -383,16 +388,46 @@ class MainWindow(Qtw.QMainWindow):
         # Clear
         clear_text = '''<html>
                             <head/>
-                            <body>
-                                <p>Click on Get Verses to start viewing verses.<br/></p>
-                                <p>Right Click to:</p><p>1. Add a BookMark</p>
-                                <p>2. Clear the screen<br/></p>
-                                <p>Shortcuts:</p>
-                                <p>1. Enter : Get Verses</p>
-                                <p>2. -&gt; : Next</p>
-                                <p>3. &lt;- : Previous</p>
-                            </body>
-                        </html>'''
+                                <body>
+                                    <p>
+                                        <span style=" font-size:9pt; font-weight:600;">
+                                            Right Click to
+                                        </span>
+                                        <span style=" font-size:9pt;">:</span>
+                                    </p>
+                                    <p>
+                                        <span style=" font-size:9pt;">
+                                            1. Add a BookMark
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span style=" font-size:9pt;">
+                                            2. Clear the screen<br/>
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span style=" font-size:9pt; font-weight:600;">
+                                            Shortcuts
+                                        </span>
+                                        <span style=" font-size:9pt;">:</span>
+                                    </p>
+                                    <p>
+                                        <span style=" font-size:9pt;">
+                                            1. Enter : Get Verses
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span style=" font-size:9pt;">
+                                            2. -&gt; : Next
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span style=" font-size:9pt;">
+                                            3. &lt;- : Previous
+                                        </span>
+                                    </p>
+                                </body>
+                            </html>'''
 
         clear_button = context_menu_option.addAction("Clear")  # Adding an option to clear text
         clear_button.triggered.connect(lambda: self.versesLabel.setText(clear_text))

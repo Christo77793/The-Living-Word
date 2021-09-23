@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1087</width>
-    <height>727</height>
+    <width>1107</width>
+    <height>762</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Your Bookmarks</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#BookMarks_PopUp{
@@ -36,6 +36,17 @@
    </property>
    <item>
     <widget class="QFrame" name="title_frame">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>65</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#title_frame{
+	background-color: rgb(29, 29, 29);
+}</string>
+     </property>
      <property name="locale">
       <locale language="English" country="Canada"/>
      </property>
@@ -47,7 +58,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="leftMargin">
-       <number>0</number>
+       <number>11</number>
       </property>
       <property name="topMargin">
        <number>0</number>
@@ -58,27 +69,17 @@
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item>
-       <widget class="QFrame" name="frame_5">
-        <property name="locale">
-         <locale language="English" country="Canada"/>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Plain</enum>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignHCenter">
+      <item alignment="Qt::AlignLeft">
        <widget class="QLabel" name="app_title">
         <property name="font">
          <font>
-          <family>Haettenschweiler</family>
-          <pointsize>29</pointsize>
+          <family>Modern No. 20</family>
+          <pointsize>15</pointsize>
           <italic>false</italic>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255)</string>
         </property>
         <property name="locale">
          <locale language="English" country="Canada"/>
@@ -88,11 +89,28 @@
         </property>
        </widget>
       </item>
-      <item alignment="Qt::AlignRight">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item alignment="Qt::AlignRight|Qt::AlignTop">
        <widget class="QFrame" name="windowButtons_frame">
         <property name="styleSheet">
          <string notr="true">QPushButton{
-	border-radius: 0px;
+	border-radius: 100px;
+}
+
+QPushButton:hover{
+	background-color: rgb(35, 35, 35);
 }</string>
         </property>
         <property name="locale">
@@ -106,7 +124,7 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <property name="spacing">
-          <number>8</number>
+          <number>0</number>
          </property>
          <property name="leftMargin">
           <number>0</number>
@@ -115,15 +133,18 @@
           <number>0</number>
          </property>
          <property name="rightMargin">
-          <number>8</number>
+          <number>0</number>
          </property>
          <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
           <widget class="QPushButton" name="minimiseButton">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Minimise&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <property name="minimumSize">
+            <size>
+             <width>55</width>
+             <height>35</height>
+            </size>
            </property>
            <property name="locale">
             <locale language="English" country="Canada"/>
@@ -133,7 +154,7 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/minimise.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/minimise.png</iconset>
+             <normaloff>../Images/Buttons/minimise.png</normaloff>../Images/Buttons/minimise.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -145,8 +166,11 @@
          </item>
          <item>
           <widget class="QPushButton" name="restoreButton">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Restore&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <property name="minimumSize">
+            <size>
+             <width>55</width>
+             <height>35</height>
+            </size>
            </property>
            <property name="locale">
             <locale language="English" country="Canada"/>
@@ -156,17 +180,22 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/restore.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/restore.png</iconset>
+             <normaloff>../Images/Buttons/restore.png</normaloff>../Images/Buttons/restore.png</iconset>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="closeButton">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Close&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <property name="minimumSize">
+            <size>
+             <width>55</width>
+             <height>35</height>
+            </size>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QPushButton:hover{
+	background-color: rgb(255, 0, 0);
+}</string>
            </property>
            <property name="locale">
             <locale language="English" country="Canada"/>
@@ -176,7 +205,7 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/close.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/close.png</iconset>
+             <normaloff>../Images/Buttons/close.png</normaloff>../Images/Buttons/close.png</iconset>
            </property>
           </widget>
          </item>
@@ -187,9 +216,71 @@
     </widget>
    </item>
    <item>
-    <widget class="QFrame" name="frame">
+    <widget class="QFrame" name="central_frame">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">#central_frame{
+	background-color: rgb(43, 43, 43);
+}
+
+QLabel{
+	color: rgb(217, 217, 217);
+}
+
+QScrollBar:vertical {
+	background-color: rgb(29, 29, 29);
+    width: 15px;
+    margin: 15px 3px 15px 3px;
+    border: 1px transparent #2A2929;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(57, 192, 254);
+    min-height: 5px;
+    border-radius: 4px;
+}
+
+QScrollBar::sub-line:vertical {
+    margin: 3px 0px 3px 0px;
+    border-image: url(:/dark_blue/img/up_arrow_disabled.png);
+    height: 0px;
+    width: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical {
+	border-image: url(:/dark_blue/img/down_arrow_disabled.png);
+    margin: 3px 0px 3px 0px;
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover, QScrollBar::sub-line:vertical:on {
+    border-image: url(:/dark_blue/img/up_arrow.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on {
+    border-image: url(:/dark_blue/img/down_arrow.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
      </property>
      <property name="locale">
       <locale language="English" country="Canada"/>
@@ -229,8 +320,8 @@
           <widget class="QTableWidget" name="tableWidget">
            <property name="minimumSize">
             <size>
-             <width>655</width>
-             <height>655</height>
+             <width>675</width>
+             <height>675</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -247,12 +338,12 @@
            <property name="styleSheet">
             <string notr="true">QTableWidget {
 	outline: 0;
-	background-color: rgb(187, 197, 218);
+	background-color: rgb(77, 77, 77);
 }
 
 QTableWidget::item {
-	background-color: rgb(187, 197, 218);
-	color: rgb(0, 0, 0);
+	background-color: rgb(67, 67, 67);
+	color: rgb(217, 217, 217);
 	padding: 5px 5px 5px 5px;
 }
 
@@ -260,11 +351,6 @@ QTableWidget::item::selected {
 	padding: 5px 5px 5px 5px;
 	background-color: rgb(198, 213, 245);
 	color: rgb(0, 0, 0);
-}
-
-QAbstractItemView {
-    alternate-background-color: #3A3939;
-    padding: 1px;
 }
 
 QHeaderView {
@@ -275,35 +361,10 @@ QHeaderView {
 }
 
 QHeaderView::section  {
-    background-color: #3A3939;
-    color: silver;
+	background-color: rgb(29, 29, 29);
+	color: #3775f4;
     padding: 5px;
-    border: 1px solid #6c6c6c;
-    border-radius: 0px;
-    text-align: center;
-}
-
-QTableCornerButton::section {
-    background-color: #3A3939;
-    color: silver;
-    padding: 5px;
-    border: 1px solid #6c6c6c;
-    border-radius: 0px;
-}
-
-QVerticalView {
-    border: transparent;
-	background: transparent;
-    margin: 0px;
-    padding: 0px;
-}
-
-QVerticalView::section  {
-    background-color: #3A3939;
-    color: silver;
-    padding: 5px;
-    border: 1px solid #6c6c6c;
-    border-radius: 0px;
+    border: 1px solid #4d4d4d;
     text-align: center;
 }</string>
            </property>
@@ -329,7 +390,7 @@ QVerticalView::section  {
             <bool>false</bool>
            </property>
            <property name="selectionMode">
-            <enum>QAbstractItemView::SingleSelection</enum>
+            <enum>QAbstractItemView::NoSelection</enum>
            </property>
            <property name="textElideMode">
             <enum>Qt::ElideMiddle</enum>
@@ -359,7 +420,7 @@ QVerticalView::section  {
             <bool>false</bool>
            </attribute>
            <attribute name="verticalHeaderVisible">
-            <bool>true</bool>
+            <bool>false</bool>
            </attribute>
            <attribute name="verticalHeaderCascadingSectionResizes">
             <bool>true</bool>
@@ -367,6 +428,11 @@ QVerticalView::section  {
            <attribute name="verticalHeaderStretchLastSection">
             <bool>false</bool>
            </attribute>
+           <column>
+            <property name="text">
+             <string>#</string>
+            </property>
+           </column>
            <column>
             <property name="text">
              <string>Book</string>
@@ -422,7 +488,7 @@ QVerticalView::section  {
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <property name="spacing">
-          <number>9</number>
+          <number>0</number>
          </property>
          <property name="topMargin">
           <number>0</number>
@@ -434,7 +500,54 @@ QVerticalView::section  {
           <number>0</number>
          </property>
          <item>
-          <widget class="QFrame" name="frame_2">
+          <widget class="QFrame" name="text_frame">
+           <property name="styleSheet">
+            <string notr="true">QComboBox
+{
+    selection-background-color: rgb(77, 77, 77);;
+	background-color: rgb(77, 77, 77);
+	color: rgb(217, 217, 217);
+    border-style: solid;
+    border: 1px solid #3A3939;
+    border-radius: 5px;
+    padding: 2px;
+    min-width: 75px;
+}
+
+QComboBox:hover, 
+QAbstractSpinBox:hover,
+QLineEdit:hover,
+QTextEdit:hover,
+QPlainTextEdit:hover,
+QAbstractView:hover,
+QTreeView:hover
+{
+    border: 1px solid #3775f4;
+	color: rgb(217, 217, 217);
+}
+
+QComboBox:on {
+    selection-background-color: #4a4a4a;
+}
+
+QComboBox QAbstractItemView
+{
+    selection-background-color: #3775f4;
+/*	color: rgb(217, 217, 217);*/
+}
+
+QComboBox::drop-down
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border-left-width: 0px;
+    border-left-color: darkgray;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}</string>
+           </property>
            <property name="locale">
             <locale language="English" country="Canada"/>
            </property>
@@ -452,6 +565,9 @@ QVerticalView::section  {
              <number>0</number>
             </property>
             <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
              <number>0</number>
             </property>
             <property name="horizontalSpacing">
@@ -509,7 +625,7 @@ QVerticalView::section  {
              <widget class="QComboBox" name="chapterNumber">
               <property name="minimumSize">
                <size>
-                <width>255</width>
+                <width>81</width>
                 <height>45</height>
                </size>
               </property>
@@ -584,7 +700,7 @@ QVerticalView::section  {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">color: rgb(0, 0, 0);</string>
               </property>
              </widget>
             </item>
@@ -592,7 +708,7 @@ QVerticalView::section  {
              <widget class="QComboBox" name="translationName">
               <property name="minimumSize">
                <size>
-                <width>255</width>
+                <width>81</width>
                 <height>45</height>
                </size>
               </property>
@@ -655,7 +771,7 @@ QVerticalView::section  {
              <widget class="QComboBox" name="verseNumber">
               <property name="minimumSize">
                <size>
-                <width>255</width>
+                <width>81</width>
                 <height>45</height>
                </size>
               </property>
@@ -674,7 +790,7 @@ QVerticalView::section  {
               </property>
               <property name="minimumSize">
                <size>
-                <width>255</width>
+                <width>81</width>
                 <height>45</height>
                </size>
               </property>
@@ -1034,13 +1150,13 @@ QVerticalView::section  {
           <widget class="QFrame" name="button_frame">
            <property name="styleSheet">
             <string notr="true">QPushButton{
-	background-color: rgba(204, 219, 253, 1);
+	background-color: rgb(30, 30, 30);
 	border-radius: 25px;
 }
 
 QPushButton:hover{
-	background-color: rgb(198, 213, 245);
-	border-radius: 25px;
+    border: 1px solid #3775f4;
+	background-color: rgb(25, 25, 25);
 }</string>
            </property>
            <property name="frameShape">
@@ -1060,40 +1176,40 @@ QPushButton:hover{
              <number>15</number>
             </property>
             <property name="bottomMargin">
-             <number>0</number>
+             <number>30</number>
             </property>
             <item>
              <widget class="QPushButton" name="addButton">
               <property name="minimumSize">
                <size>
                 <width>125</width>
-                <height>60</height>
+                <height>55</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>125</width>
-                <height>60</height>
+                <height>55</height>
                </size>
               </property>
               <property name="font">
                <font>
-                <family>Goudy Old Style</family>
-                <pointsize>10</pointsize>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>9</pointsize>
                </font>
               </property>
               <property name="toolTip">
                <string>Add BookMark</string>
               </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">color: rgb(217, 217, 217);</string>
               </property>
               <property name="text">
                <string>ADD</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/add.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/add.png</iconset>
+                <normaloff>../Images/Buttons/add.png</normaloff>../Images/Buttons/add.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -1108,33 +1224,33 @@ QPushButton:hover{
               <property name="minimumSize">
                <size>
                 <width>125</width>
-                <height>60</height>
+                <height>55</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>125</width>
-                <height>60</height>
+                <height>55</height>
                </size>
               </property>
               <property name="font">
                <font>
-                <family>Goudy Old Style</family>
-                <pointsize>10</pointsize>
+                <family>MS Shell Dlg 2</family>
+                <pointsize>9</pointsize>
                </font>
               </property>
               <property name="toolTip">
                <string>Delete BookMark</string>
               </property>
               <property name="styleSheet">
-               <string notr="true"/>
+               <string notr="true">color: rgb(217, 217, 217);</string>
               </property>
               <property name="text">
                <string>DELETE</string>
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/delete.png</normaloff>D:/Projects/Python Projects/The Living Word/App/Images/Buttons/delete.png</iconset>
+                <normaloff>../Images/Buttons/delete.png</normaloff>../Images/Buttons/delete.png</iconset>
               </property>
               <property name="iconSize">
                <size>

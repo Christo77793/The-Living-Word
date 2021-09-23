@@ -17,14 +17,20 @@ class NotesWindow(Qtw.QMainWindow):
         super().__init__()  # avoid code redundancy
 
         # loading the application's UI {stored as XML format}
-        # uic.loadUi(r"UI\Test.ui", self)
         uic.loadUi(r"UI\Bible Notes.ui", self)
 
         # setting a window icon
         self.setWindowIcon(Qtg.QIcon(r"Images\Window Icons\bible_notes.png"))
 
-        self.show()
+        self.setWindowFlag(Qtc.Qt.FramelessWindowHint)  # removes standard title
+        self.show()  # show the UI
         self.showMaximized()  # loads the app in full-screen
+
+        # Window Manipulation Buttons
+
+        self.minimiseButton.clicked.connect(lambda: self.showMinimized())
+        self.restoreButton.clicked.connect(lambda: self.change_window_size())
+        self.closeButton.clicked.connect(lambda: self.close())
 
         self.accepted_file_types = "Text Document (*.txt);; Python (*.py)"  # file types that can be opened
 
@@ -56,26 +62,26 @@ class NotesWindow(Qtw.QMainWindow):
         font_size_button = self.findChild(Qtw.QComboBox, "changeFontSizeButton")
         font_size_button.addItems([str(size) for size in available_font_sizes])  # Loop through available sizes and add them
 
-        font_size_button.setCurrentIndex(8)
+        font_size_button.setCurrentIndex(4)
 
         font_size_button.currentIndexChanged.connect(lambda size: self.noteArea.setFontPointSize(int(available_font_sizes[size])))
 
         # File Actions
 
         # Open
-        open_action = self.findChild(Qtw.QAction, "actionOpen")
+        open_action = self.findChild(Qtw.QPushButton, "openButton")
         open_action.setShortcut(Qtg.QKeySequence.Open)
-        open_action.triggered.connect(self.open_file)
+        open_action.clicked.connect(self.open_file)
 
         # Save
-        save_action = self.findChild(Qtw.QAction, "actionSave")
+        save_action = self.findChild(Qtw.QPushButton, "saveButton")
         save_action.setShortcut(Qtg.QKeySequence.Save)
-        save_action.triggered.connect(self.save_text)
+        save_action.clicked.connect(self.save_text)
 
         # Save As
-        save_as_action = self.findChild(Qtw.QAction, "actionSave_As")
+        save_as_action = self.findChild(Qtw.QPushButton, "saveAsButton")
         save_as_action.setShortcut(Qtg.QKeySequence.SaveAs)
-        save_as_action.triggered.connect(self.save_text_as)
+        save_as_action.clicked.connect(self.save_text_as)
 
         # Quick Access
 
@@ -88,6 +94,31 @@ class NotesWindow(Qtw.QMainWindow):
         redo_button = self.findChild(Qtw.QPushButton, "redoButton")
         redo_button.clicked.connect(self.noteArea.redo)
         redo_button.setShortcut(Qtg.QKeySequence.Redo)
+
+    def mouseDoubleClickEvent(self, event):
+        if event.button() == Qtc.Qt.LeftButton:
+            self.change_window_size()
+
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+
+    def move_with_click_title_bar(self, event):
+        '''
+        Function to move the app as the user clicks and drags on the title bar
+        '''
+        if event.buttons() == Qtc.Qt.LeftButton:
+            self.move(self.pos() + event.globalPos() - self.dragPos)
+            self.dragPos = event.globalPos()
+            event.accept()
+
+    def change_window_size(self):
+
+        if self.isMaximized():
+            self.showNormal()
+            self.restoreButton.setIcon(Qtg.QIcon(r"Images\Buttons\restore.png"))
+        else:
+            self.showMaximized()
+            self.restoreButton.setIcon(Qtg.QIcon(r"Images\Buttons\window.png"))
 
     def open_file(self):
         '''
@@ -197,13 +228,13 @@ class NotesWindow(Qtw.QMainWindow):
                 self.changed_bold_value = True
 
                 # changing button color of bold to show it's active
-                self.boldButton.setStyleSheet("QPushButton{ background-color: rgb(120, 141, 254); } QPushButton:hover{ background-color: rgb(152, 168, 255); }")
+                self.boldButton.setStyleSheet("QPushButton{ background-color: rgb(55, 117, 244); } QPushButton:hover{ background-color: rgb(47, 102, 211); }")
                 self.noteArea.setFontWeight(Qtg.QFont.Bold)
             else:
                 self.changed_bold_value = False
 
                 # changing button color of bold to show it's not active
-                self.boldButton.setStyleSheet("QPushButton{ background-color: rgba(171, 196, 255, 1); } QPushButton:hover{ background-color: rgb(163, 187, 243); }")
+                self.boldButton.setStyleSheet("QPushButton{ background-color: rgb(30, 30, 30); } QPushButton:hover{ background-color: rgb(25, 25, 25); }")
                 self.noteArea.setFontWeight(Qtg.QFont.Normal)
 
         if style == "Italic":
@@ -212,14 +243,14 @@ class NotesWindow(Qtw.QMainWindow):
                 self.changed_italic_value = True
 
                 # changing button color of italic to show it's active
-                self.italicButton.setStyleSheet("QPushButton{ background-color: rgb(120, 141, 254); } QPushButton:hover{ background-color: rgb(152, 168, 255); }")
+                self.italicButton.setStyleSheet("QPushButton{ background-color: rgb(55, 117, 244); } QPushButton:hover{ background-color: rgb(47, 102, 211); }")
 
                 self.noteArea.setFontItalic(True)
             else:
                 self.changed_italic_value = False
 
                 # changing button color of italic to show it's not active
-                self.italicButton.setStyleSheet("QPushButton{ background-color: rgba(171, 196, 255, 1); } QPushButton:hover{ background-color: rgb(163, 187, 243); }")
+                self.italicButton.setStyleSheet("QPushButton{ background-color: rgb(30, 30, 30); } QPushButton:hover{ background-color: rgb(25, 25, 25); }")
 
                 self.noteArea.setFontItalic(False)
 
@@ -229,14 +260,14 @@ class NotesWindow(Qtw.QMainWindow):
                 self.changed_underline_value = True
 
                 # changing button color of underline to show it's active
-                self.underlineButton.setStyleSheet("QPushButton{ background-color: rgb(120, 141, 254); } QPushButton:hover{ background-color: rgb(152, 168, 255); }")
+                self.underlineButton.setStyleSheet("QPushButton{ background-color: rgb(55, 117, 244); } QPushButton:hover{ background-color: rgb(47, 102, 211); }")
 
                 self.noteArea.setFontUnderline(True)
             else:
                 self.changed_underline_value = False
 
                 # changing button color of underline to show it's not active
-                self.underlineButton.setStyleSheet("QPushButton{ background-color: rgba(171, 196, 255, 1); } QPushButton:hover{ background-color: rgb(163, 187, 243); }")
+                self.underlineButton.setStyleSheet("QPushButton{ background-color: rgb(30, 30, 30); } QPushButton:hover{ background-color: rgb(25, 25, 25); }")
 
                 self.noteArea.setFontUnderline(False)
 

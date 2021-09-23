@@ -32,9 +32,8 @@ class ShowBookMarks(Qtw.QWidget):
         # setting the title frame to be clicked on and move the app with it
         self.title_frame.mouseMoveEvent = self.move_with_click_title_bar
 
-        self.setWindowFlag(Qtc.Qt.FramelessWindowHint)
+        self.setWindowFlag(Qtc.Qt.FramelessWindowHint)  # removes standard title
         self.show()  # show the UI
-        self.showMaximized()  # loads the app in full-screen
 
         # Window Manipulation Buttons
 
@@ -72,6 +71,10 @@ class ShowBookMarks(Qtw.QWidget):
         delete = self.findChild(Qtw.QPushButton, "deleteButton")
         delete.clicked.connect(self.remove_data)
 
+    def mouseDoubleClickEvent(self, event):
+        if event.button() == Qtc.Qt.LeftButton:
+            self.change_window_size()
+
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
 
@@ -88,9 +91,10 @@ class ShowBookMarks(Qtw.QWidget):
 
         if self.isMaximized():
             self.showNormal()
-
+            self.restoreButton.setIcon(Qtg.QIcon(r"Images\Buttons\restore.png"))
         else:
             self.showMaximized()
+            self.restoreButton.setIcon(Qtg.QIcon(r"Images\Buttons\window.png"))
 
     def load_data(self):
         '''
@@ -132,6 +136,9 @@ class ShowBookMarks(Qtw.QWidget):
 
             for column_number, column_data in enumerate(row_data):
                 self.tableWidget.setItem(row_number, column_number, Qtw.QTableWidgetItem(str(column_data)))  # set the respective data in each column of the row
+
+        # getting the count of the total number of rows
+        self.total_count = self.tableWidget.rowCount()
 
         # resizes rows according to its content
         self.tableWidget.resizeRowsToContents()
@@ -210,6 +217,9 @@ class ShowBookMarks(Qtw.QWidget):
                 self.status_text.setStyleSheet("color: red")
 
             else:
+                # if deleting the verse from the database is successful
+                self.status_text.setText("Successfully Deleted")
+                self.status_text.setStyleSheet("color: green")
 
                 if self.total_count == 0:
                     # Deleting since count is now 0
@@ -227,7 +237,7 @@ class ShowBookMarks(Qtw.QWidget):
 
         else:
             self.status_text.setText("Nothing to delete")
-            self.status_text.setStyleSheet("color: black")
+            self.status_text.setStyleSheet("color: rgb(217, 217, 217)")
 
     def update_chapter_list(self):
         '''
