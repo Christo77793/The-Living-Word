@@ -18,8 +18,8 @@ bible_promises = [["Job", 8, 7], ["1 Chronicles", 16, 34], ["James", 1, 17],
                   ["Psalms", 34, 8], ["Genesis", 28, 15], ["Isaiah", 41, 10],
                   ["Revelation", 3, 8], ["Haggai", 2, 19], ["Psalms", 50, 15]]
 
-BM_DB_LOCATION = r"D:\Projects\Python Projects\The Living Word\App\Bible Database\bookmarked_verses.db"
-MAIN_DB_LOCATION = r"D:\Projects\Python Projects\The Living Word\App\Bible Database\bible_database.db"
+BM_DB_LOCATION = r"Bible Database\bookmarked_verses.db"
+MAIN_DB_LOCATION = r"Bible Database\bible_database.db"
 
 
 def show_verses(book_id, chapter_id, translation_filter):
