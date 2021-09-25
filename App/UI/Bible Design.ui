@@ -1739,7 +1739,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
-                    <height>450</height>
+                    <height>0</height>
                    </size>
                   </property>
                   <property name="styleSheet">

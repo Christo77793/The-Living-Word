@@ -321,7 +321,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
            <property name="minimumSize">
             <size>
              <width>675</width>
-             <height>675</height>
+             <height>0</height>
             </size>
            </property>
            <property name="maximumSize">
