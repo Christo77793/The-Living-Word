@@ -271,7 +271,7 @@ QPushButton:hover{
 }
 
 
-QComboBox
+QComboBox, QFontComboBox
 {
     selection-background-color: rgb(77, 77, 77);;
 	background-color: rgb(77, 77, 77);
@@ -284,6 +284,7 @@ QComboBox
 }
 
 QComboBox:hover, 
+QFontComboBox:hover,
 QAbstractSpinBox:hover,
 QLineEdit:hover,
 QTextEdit:hover,
@@ -295,16 +296,19 @@ QTreeView:hover
 	color: rgb(217, 217, 217);
 }
 
-QComboBox:on {
+QComboBox:on,
+QFontComboBox:on {
     selection-background-color: #4a4a4a;
 }
 
-QComboBox QAbstractItemView
+QComboBox QAbstractItemView,
+QFontComboBox QAbstractItemView
 {
     selection-background-color: #3775f4;
 }
 
-QComboBox::drop-down
+QComboBox::drop-down,
+QFontComboBox::drop-down
 {
     subcontrol-origin: padding;
     subcontrol-position: top right;

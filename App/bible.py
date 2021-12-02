@@ -71,7 +71,7 @@ class MainWindow(Qtw.QMainWindow):
 
         # Books
         books_list = self.findChild(Qtw.QComboBox, "Book")
-        self.update_chapter_list()  # Count chapter of the first book)
+        self.update_chapter_list()  # Count chapter of the first book
         books_list.currentIndexChanged.connect(self.update_chapter_list)  # Automatically update chapter count
 
         # Verses Functions
@@ -383,7 +383,7 @@ class MainWindow(Qtw.QMainWindow):
 
         # BookMark
         bookmark_button = context_menu_option.addAction("BookMark")
-        bookmark_button.triggered.connect(self.bookmark_popup)  # Execute bookmark function
+        bookmark_button.triggered.connect(self.open_view_bookmarks)  # Execute bookmark function
 
         # Clear
         clear_text = '''<html>
@@ -434,26 +434,6 @@ class MainWindow(Qtw.QMainWindow):
 
         cursor = Qtg.QCursor()
         context_menu_option.exec_(cursor.pos())
-
-    def bookmark_popup(self):
-        '''
-        Function to show a pop-up that adds the bookmark. Values are passed to the __init__ method of the BookMarkPop class.
-        '''
-
-        # Book name
-        book = self.findChild(Qtw.QComboBox, "Book")
-        selected_book = book.currentIndex()
-
-        # Chapter number
-        chapter = self.findChild(Qtw.QComboBox, "Chapter")
-        selected_chapter = chapter.currentIndex()
-
-        # Translation selected
-        translation = self.findChild(Qtw.QComboBox, "Translation")
-        selected_translation = translation.currentIndex()
-
-        # self.bookmark_ui = BookMarkPopUp(selected_book, selected_chapter, selected_translation)
-        self.bookmark_ui = ShowBookMarks(selected_book, selected_chapter, selected_translation)
 
     def closeEvent(self, event):
         '''

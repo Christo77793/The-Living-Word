@@ -63,10 +63,14 @@ class NotesWindow(Qtw.QMainWindow):
         font_size_button.addItems([str(size) for size in available_font_sizes])  # Loop through available sizes and add them
 
         font_size_button.setCurrentIndex(4)
+        self.noteArea.setFontPointSize(9)
 
         font_size_button.currentIndexChanged.connect(lambda size: self.noteArea.setFontPointSize(int(available_font_sizes[size])))
 
         # File Actions
+
+        new_action = self.findChild(Qtw.QPushButton, "newButton")
+        new_action.clicked.connect(lambda: self.noteArea.clear())
 
         # Open
         open_action = self.findChild(Qtw.QPushButton, "openButton")
@@ -80,7 +84,6 @@ class NotesWindow(Qtw.QMainWindow):
 
         # Save As
         save_as_action = self.findChild(Qtw.QPushButton, "saveAsButton")
-        save_as_action.setShortcut(Qtg.QKeySequence.SaveAs)
         save_as_action.clicked.connect(self.save_text_as)
 
         # Quick Access
@@ -186,7 +189,7 @@ class NotesWindow(Qtw.QMainWindow):
             filter=self.accepted_file_types
         )
 
-        note_area = self.findChild(Qtw.QPlainTextEdit, "noteArea")
+        note_area = self.findChild(Qtw.QTextEdit, "noteArea")
         text_to_be_saved_as = note_area.toPlainText()
 
         if not path:
