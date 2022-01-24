@@ -1,5 +1,6 @@
 from Notes import *
 from Bookmark_Functions import *
+from Search_Function import *
 from SQLite import *
 import sys
 import random
@@ -88,6 +89,12 @@ class MainWindow(Qtw.QMainWindow):
         next_chapter = self.findChild(Qtw.QPushButton, "nextChapter")
         next_chapter.clicked.connect(self.next_chapter)
 
+        # Verse Tools
+
+        # Search verses
+        search_verses = self.findChild(Qtw.QPushButton, "searchVersesButton")
+        search_verses.clicked.connect(self.open_search_verses)
+
         # Displaying Verses
 
         # Setting a custom context menu
@@ -138,8 +145,8 @@ class MainWindow(Qtw.QMainWindow):
         toggle_frame_length = self.findChild(Qtw.QFrame, "side_menu_frame")
         toggle_width = toggle_frame_length.width()
 
-        max_width = 156
-        min_width = 65
+        max_width = 150
+        min_width = 55
 
         if toggle_width == min_width:
             # Expanding
@@ -373,6 +380,13 @@ class MainWindow(Qtw.QMainWindow):
         bible_promise_label = self.findChild(Qtw.QLabel, "bible_promise_text")
         bible_promise_label.setText(verse)
 
+    def open_search_verses(self):
+        '''
+        Function to open the search verses UI
+        '''
+
+        self.view_show_verses_ui = SearchVerses()
+
     def verses_custom_context_menu(self):
         '''
         Function that shows a custom context menu.
@@ -386,48 +400,8 @@ class MainWindow(Qtw.QMainWindow):
         bookmark_button.triggered.connect(self.open_view_bookmarks)  # Execute bookmark function
 
         # Clear
-        clear_text = '''<html>
-                            <head/>
-                                <body>
-                                    <p>
-                                        <span style=" font-size:9pt; font-weight:600;">
-                                            Right Click to
-                                        </span>
-                                        <span style=" font-size:9pt;">:</span>
-                                    </p>
-                                    <p>
-                                        <span style=" font-size:9pt;">
-                                            1. Add a BookMark
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span style=" font-size:9pt;">
-                                            2. Clear the screen<br/>
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span style=" font-size:9pt; font-weight:600;">
-                                            Shortcuts
-                                        </span>
-                                        <span style=" font-size:9pt;">:</span>
-                                    </p>
-                                    <p>
-                                        <span style=" font-size:9pt;">
-                                            1. Enter : Get Verses
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span style=" font-size:9pt;">
-                                            2. -&gt; : Next
-                                        </span>
-                                    </p>
-                                    <p>
-                                        <span style=" font-size:9pt;">
-                                            3. &lt;- : Previous
-                                        </span>
-                                    </p>
-                                </body>
-                            </html>'''
+        clear_text = '''<html><head/><body><p><span style=" font-weight:600;">Right Click to</span>:</p><p>1. Add a BookMark</p><p>2. Clear the screen<br/></p>
+        <p><span style=" font-weight:600;">Shortcuts</span>:</p><p>1. Enter : Get Verses</p><p>2. -&gt; : Next</p><p>3. &lt;- : Previous</p></body></html>'''
 
         clear_button = context_menu_option.addAction("Clear")  # Adding an option to clear text
         clear_button.triggered.connect(lambda: self.versesLabel.setText(clear_text))
@@ -493,6 +467,6 @@ class MyThread(Qtc.QThread):
 
 
 if __name__ == "__main__":
-    app = Qtw.QApplication(sys.argv)
+    app = Qtw.QApplication(sys.argv)  # allows us to pass arguments if call called from cmd line
     main_window = MainWindow()
-    sys.exit(app.exec())
+    sys.exit(app.exec())  # waiting for the app to close; if it does it exits
