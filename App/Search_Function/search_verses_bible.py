@@ -97,11 +97,11 @@ class SearchVerses(Qtw.QWidget):
                     if verse[1] == book_name[0]:
 
                         if temp_counter == number_of_verses:
-                            temp_verses += f"{temp_counter}. {book_name[1]} {verse[2]}:{verse[3]} - {final_string}"
+                            temp_verses += f"<mark style='color: #3775f4'>{temp_counter}</mark>. {book_name[1]} {verse[2]}:{verse[3]} - {final_string}"
                             print("Reached Last Line")
 
                         else:
-                            temp_verses += f"{temp_counter}. {book_name[1]} {verse[2]}:{verse[3]} - {final_string}<br /><br />"
+                            temp_verses += f"<mark style='color: #3775f4'>{temp_counter}</mark>. {book_name[1]} {verse[2]}:{verse[3]} - {final_string}<br /><br />"
                             temp_counter += 1
 
             self.versesReturnedCount.setText(f"Count: {number_of_verses}")
