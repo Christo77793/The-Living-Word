@@ -22,6 +22,9 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
+  <property name="locale">
+   <locale language="English" country="Canada"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="maximumSize">
     <size>
@@ -120,6 +123,7 @@
 }
 
 QPushButton:hover{
+    border: 1px solid #3775f4;
 	background-color: rgb(35, 35, 35);
 }</string>
             </property>
@@ -150,6 +154,18 @@ QPushButton:hover{
              </property>
              <item>
               <widget class="QPushButton" name="menuButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
                <property name="locale">
                 <locale language="English" country="Canada"/>
                </property>
@@ -383,13 +399,13 @@ QPushButton:hover{
            <widget class="QFrame" name="side_menu_frame">
             <property name="minimumSize">
              <size>
-              <width>65</width>
+              <width>55</width>
               <height>0</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>65</width>
+              <width>55</width>
               <height>16777215</height>
              </size>
             </property>
@@ -403,6 +419,7 @@ QPushButton{
 }
 
 QPushButton:hover{
+    border: 1px solid #3775f4;
 	background-color: rgb(35, 35, 35);
 }
 
@@ -443,6 +460,12 @@ QLabel{
                  <height>0</height>
                 </size>
                </property>
+               <property name="maximumSize">
+                <size>
+                 <width>150</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <property name="locale">
                 <locale language="English" country="Canada"/>
                </property>
@@ -466,13 +489,25 @@ QLabel{
                  <number>9</number>
                 </property>
                 <property name="horizontalSpacing">
-                 <number>13</number>
+                 <number>9</number>
                 </property>
                 <property name="verticalSpacing">
                  <number>35</number>
                 </property>
                 <item row="4" column="0" alignment="Qt::AlignLeft">
                  <widget class="QPushButton" name="aboutButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
                   <property name="locale">
                    <locale language="English" country="Canada"/>
                   </property>
@@ -541,6 +576,21 @@ QLabel{
                 </item>
                 <item row="2" column="0" alignment="Qt::AlignLeft">
                  <widget class="QPushButton" name="bookmarkButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>Bookmarks</string>
+                  </property>
                   <property name="locale">
                    <locale language="English" country="Canada"/>
                   </property>
@@ -585,6 +635,21 @@ QLabel{
                 </item>
                 <item row="1" column="0" alignment="Qt::AlignLeft">
                  <widget class="QPushButton" name="notesButton">
+                  <property name="minimumSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>45</width>
+                    <height>45</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string>Notes</string>
+                  </property>
                   <property name="locale">
                    <locale language="English" country="Canada"/>
                   </property>
@@ -780,11 +845,8 @@ QLabel{
     selection-background-color: rgb(77, 77, 77);;
 	background-color: rgb(77, 77, 77);
 	color: rgb(217, 217, 217);
-    border-style: solid;
     border: 1px solid #3A3939;
     border-radius: 5px;
-    padding: 2px;
-    min-width: 75px;
 }
 
 QComboBox:hover, 
@@ -908,7 +970,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>81</width>
+                       <width>0</width>
                        <height>45</height>
                       </size>
                      </property>
@@ -920,7 +982,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                      </property>
                      <property name="font">
                       <font>
-                       <pointsize>9</pointsize>
+                       <pointsize>10</pointsize>
                       </font>
                      </property>
                      <property name="toolTip">
@@ -1268,7 +1330,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                     <widget class="QComboBox" name="Chapter">
                      <property name="minimumSize">
                       <size>
-                       <width>81</width>
+                       <width>0</width>
                        <height>45</height>
                       </size>
                      </property>
@@ -1280,7 +1342,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                      </property>
                      <property name="font">
                       <font>
-                       <pointsize>9</pointsize>
+                       <pointsize>10</pointsize>
                       </font>
                      </property>
                      <property name="toolTip">
@@ -1298,7 +1360,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                     <widget class="QComboBox" name="Translation">
                      <property name="minimumSize">
                       <size>
-                       <width>81</width>
+                       <width>0</width>
                        <height>45</height>
                       </size>
                      </property>
@@ -1310,7 +1372,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
                      </property>
                      <property name="font">
                       <font>
-                       <pointsize>9</pointsize>
+                       <pointsize>10</pointsize>
                       </font>
                      </property>
                      <property name="focusPolicy">
@@ -1649,64 +1711,6 @@ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
 
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     background: none;
-}
-
-/* ----------------------------------------------------*/
-
-QScrollBar:horizontal {
-    height: 15px;
-    margin: 3px 15px 3px 15px;
-    border: 1px transparent #2A2929;
-    border-radius: 4px;
-    background-color: #2A2929;
-}
-
-QScrollBar::handle:horizontal {
-    background-color: #605F5F;
-    min-width: 5px;
-    border-radius: 4px;
-}
-
-QScrollBar::add-line:horizontal {
-    margin: 0px 3px 0px 3px;
-/*    border-image: url(:/dark_blue/img/right_arrow_disabled.png);*/
-    width: 10px;
-    height: 10px;
-    subcontrol-position: right;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:horizontal {
-    margin: 0px 3px 0px 3px;
-/*    border-image: url(:/dark_blue/img/left_arrow_disabled.png);*/
-    height: 10px;
-    width: 10px;
-    subcontrol-position: left;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::add-line:horizontal:hover,QScrollBar::add-line:horizontal:on {
-/*    border-image: url(:/dark_blue/img/right_arrow.png);*/
-    height: 10px;
-    width: 10px;
-    subcontrol-position: right;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:horizontal:hover, QScrollBar::sub-line:horizontal:on {
-/*    border-image: url(:/dark_blue/img/left_arrow.png);*/
-    height: 10px;
-    width: 10px;
-    subcontrol-position: left;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal {
-    background: none;
-}
-
-QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
-    background: none;
 }</string>
                </property>
                <property name="locale">
@@ -1726,7 +1730,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                  <number>15</number>
                 </property>
                 <property name="topMargin">
-                 <number>15</number>
+                 <number>1</number>
                 </property>
                 <property name="rightMargin">
                  <number>15</number>
@@ -1734,6 +1738,81 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                 <property name="bottomMargin">
                  <number>15</number>
                 </property>
+                <item alignment="Qt::AlignRight">
+                 <widget class="QFrame" name="verses_tool_frame">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	border-radius: 11px;
+}
+
+QPushButton:hover{
+    border: 1px solid #3775f4;
+	background-color: rgb(35, 35, 35);
+}</string>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_4">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>5</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>4</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="searchVersesButton">
+                     <property name="minimumSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="toolTip">
+                      <string>Search</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../Images/Buttons/search.png</normaloff>../Images/Buttons/search.png</iconset>
+                     </property>
+                     <property name="iconSize">
+                      <size>
+                       <width>20</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
                 <item>
                  <widget class="QScrollArea" name="scrollableArea">
                   <property name="minimumSize">
@@ -1771,8 +1850,8 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                     <rect>
                      <x>0</x>
                      <y>0</y>
-                     <width>1163</width>
-                     <height>543</height>
+                     <width>1173</width>
+                     <height>531</height>
                     </rect>
                    </property>
                    <property name="maximumSize">
@@ -1782,76 +1861,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
                     </size>
                    </property>
                    <property name="styleSheet">
-                    <string notr="true">/*#frame_3{	
-	background-color: rgba(215, 227, 252, 1);
-}
-
-QScrollBar:vertical{
-	border: none;
-	background color: rgb(0, 0, 0);
-	border-radius: 0px;
-	margin: 15px 0px 15px 0px;
-	width: 13px;
-}
-
-QScrollBar::handle:vertical{
-	background color: rgb(0, 0, 0);
-	min-height: 25px;
-	border-radius: 7px;
-}
-
-QScrollBar::handle:vertical:hover{
-	background color: rgb(0, 0, 0);
-}
-
-QScrollBar::handle:vertical:pressed{
-	background color: rgb(0, 0, 0);
-}
-
-QScrollBar::sub-line:vertical{
-	border: none;
-	background color: rgb(0, 0, 0);
-	height: 15px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
-	subcontrol-position: top;
-	subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:vertical:hover{
-	background color: rgb(0, 0, 0);
-}
-
-QScrollBar::sub-line:vertical:pressed{
-	background color: rgb(0, 0, 0);
-}
-
-QScrollBar::add-line:vertical{
-	border: none;
-	background color: rgb(0, 0, 0);
-	height: 15px;
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	subcontrol-position: bottom;
-	subcontrol-origin: margin;
-}
-
-QScrollBar::add-line:vertical:hover{
-	background color: rgb(0, 0, 0);
-}
-
-QScrollBar::add-line:vertical:pressed{
-	background color: rgb(0, 0, 0);
-}
-
-QScrollbar::up-arrow:vertical, QScrollBar::down-arrow:vertical{
-	background: none;
-}
-
-QScrollbar::add-page:vertical, QScrollBar::sub-page:vertical{
-	background: none;
-}
-*/</string>
+                    <string notr="true"/>
                    </property>
                    <property name="locale">
                     <locale language="English" country="Germany"/>
@@ -1888,7 +1898,7 @@ QScrollbar::add-page:vertical, QScrollBar::sub-page:vertical{
                       </property>
                       <property name="font">
                        <font>
-                        <pointsize>9</pointsize>
+                        <pointsize>10</pointsize>
                        </font>
                       </property>
                       <property name="styleSheet">
@@ -1904,7 +1914,7 @@ QScrollbar::add-page:vertical, QScrollBar::sub-page:vertical{
                        <enum>QFrame::Plain</enum>
                       </property>
                       <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Right Click to&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;1. Add a BookMark&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;2. Clear the screen&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Shortcuts&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;1. Enter : Get Verses&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;2. -&amp;gt; : Next&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;3. &amp;lt;- : Previous&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Right Click to&lt;/span&gt;:&lt;/p&gt;&lt;p&gt;1. Add a BookMark&lt;/p&gt;&lt;p&gt;2. Clear the screen&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Shortcuts&lt;/span&gt;:&lt;/p&gt;&lt;p&gt;1. Enter : Get Verses&lt;/p&gt;&lt;p&gt;2. -&amp;gt; : Next&lt;/p&gt;&lt;p&gt;3. &amp;lt;- : Previous&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>

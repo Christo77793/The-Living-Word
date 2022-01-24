@@ -18,9 +18,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">/*#centralwidget, #quick_access_frame, #text_editor_frame, #text_format_frame {
-	background-color: rgb(43, 43, 43);
-}*/</string>
+    <string notr="true"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
@@ -242,7 +240,7 @@ QPushButton:hover{
         <number>9</number>
        </property>
        <property name="bottomMargin">
-        <number>9</number>
+        <number>11</number>
        </property>
        <item alignment="Qt::AlignLeft">
         <widget class="QFrame" name="text_format_frame">
@@ -268,10 +266,487 @@ QPushButton:hover{
 QPushButton:hover{
     border: 1px solid #3775f4;
 	background-color: rgb(25, 25, 25);
+}</string>
+         </property>
+         <property name="locale">
+          <locale language="English" country="Canada"/>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="file_action_frame">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="openButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Open File</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../Images/Buttons/open.png</normaloff>../Images/Buttons/open.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QPushButton" name="newButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>New File</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../Images/Buttons/new.png</normaloff>../Images/Buttons/new.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QPushButton" name="saveButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Save File</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../Images/Buttons/save.png</normaloff>../Images/Buttons/save.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QPushButton" name="saveAsButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Save File As...</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../Images/Buttons/save-as.png</normaloff>../Images/Buttons/save-as.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>25</width>
+                 <height>25</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="quick_access_buttons">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="locale">
+             <locale language="English" country="Canada"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <property name="leftMargin">
+              <number>11</number>
+             </property>
+             <property name="topMargin">
+              <number>11</number>
+             </property>
+             <property name="rightMargin">
+              <number>11</number>
+             </property>
+             <property name="bottomMargin">
+              <number>11</number>
+             </property>
+             <item row="0" column="2">
+              <widget class="QPushButton" name="redoButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Goudy Old Style</family>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Redo</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../Images/Buttons/redo.png</normaloff>../Images/Buttons/redo.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QPushButton" name="undoButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Goudy Old Style</family>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Undo</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../Images/Buttons/undo.png</normaloff>../Images/Buttons/undo.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QPushButton" name="shareButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Goudy Old Style</family>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Share</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../Images/Buttons/share.png</normaloff>../Images/Buttons/share.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="text_action_buttons">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="2">
+              <widget class="QPushButton" name="underlineButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Goudy Old Style</family>
+                 <pointsize>11</pointsize>
+                 <underline>true</underline>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Underline</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/*QPushButton{
+	background-color: rgba(171, 196, 255, 1);
 }
 
+QPushButton:hover{
+	background-color: rgb(163, 187, 243);
+}*/</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
+               <property name="text">
+                <string>U</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="italicButton">
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Goudy Old Style</family>
+                 <pointsize>11</pointsize>
+                 <italic>true</italic>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Italic</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/*QPushButton{
+	background-color: rgba(171, 196, 255, 1);
+}
 
-QComboBox, QFontComboBox
+QPushButton:hover{
+	background-color: rgb(163, 187, 243);
+}*/</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
+               <property name="text">
+                <string>I</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QPushButton" name="boldButton">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>45</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Goudy Old Style</family>
+                 <pointsize>11</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Bold</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/*QPushButton{
+	background-color: rgba(171, 196, 255, 1);
+}
+
+QPushButton:hover{
+	background-color: rgb(163, 187, 243);
+}*/</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
+               <property name="text">
+                <string>B</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="text_format_buttons">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QComboBox, QFontComboBox
 {
     selection-background-color: rgb(77, 77, 77);;
 	background-color: rgb(77, 77, 77);
@@ -280,7 +755,6 @@ QComboBox, QFontComboBox
     border: 1px solid #3A3939;
     border-radius: 5px;
     padding: 2px;
-    min-width: 75px;
 }
 
 QComboBox:hover, 
@@ -310,14 +784,7 @@ QFontComboBox QAbstractItemView
 QComboBox::drop-down,
 QFontComboBox::drop-down
 {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 15px;
-    border-left-width: 0px;
-    border-left-color: darkgray;
-    border-left-style: solid;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border: 0px;*
 }
 
 QScrollBar:vertical {
@@ -375,200 +842,6 @@ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     background: none;
 }</string>
-         </property>
-         <property name="locale">
-          <locale language="English" country="Canada"/>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <property name="spacing">
-           <number>0</number>
-          </property>
-          <property name="leftMargin">
-           <number>5</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item alignment="Qt::AlignLeft">
-           <widget class="QFrame" name="file_action_frame">
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	background-color: rgb(30, 30, 30);
-	color: rgb(217, 217, 217);
-	border-radius: 11px;
-}
-
-QPushButton:hover{
-    border: 1px solid #3775f4;
-	background-color: rgb(25, 25, 25);
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_2">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <item row="0" column="0">
-              <widget class="QPushButton" name="newButton">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>New File</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../Images/Buttons/new.png</normaloff>../Images/Buttons/new.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QPushButton" name="openButton">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>Open File</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../Images/Buttons/open.png</normaloff>../Images/Buttons/open.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QPushButton" name="saveButton">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>Save File</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../Images/Buttons/save.png</normaloff>../Images/Buttons/save.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="3">
-              <widget class="QPushButton" name="saveAsButton">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>Save File As...</string>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../Images/Buttons/save-as.png</normaloff>../Images/Buttons/save-as.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>25</width>
-                 <height>25</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item alignment="Qt::AlignTop">
-           <widget class="QFrame" name="frame_5">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>200</height>
-             </size>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
             </property>
             <property name="locale">
              <locale language="English" country="Canada"/>
@@ -581,10 +854,10 @@ QPushButton:hover{
             </property>
             <layout class="QGridLayout" name="gridLayout">
              <property name="leftMargin">
-              <number>5</number>
+              <number>11</number>
              </property>
              <property name="topMargin">
-              <number>15</number>
+              <number>5</number>
              </property>
              <property name="rightMargin">
               <number>5</number>
@@ -592,62 +865,14 @@ QPushButton:hover{
              <property name="bottomMargin">
               <number>5</number>
              </property>
-             <property name="horizontalSpacing">
-              <number>15</number>
+             <property name="spacing">
+              <number>7</number>
              </property>
-             <property name="verticalSpacing">
-              <number>5</number>
-             </property>
-             <item row="0" column="2">
-              <widget class="QPushButton" name="boldButton">
-               <property name="enabled">
-                <bool>true</bool>
-               </property>
+             <item row="0" column="4">
+              <widget class="QComboBox" name="changeFontSizeButton">
                <property name="minimumSize">
                 <size>
-                 <width>45</width>
-                 <height>45</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>45</width>
-                 <height>45</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Goudy Old Style</family>
-                 <pointsize>11</pointsize>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Bold</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">/*QPushButton{
-	background-color: rgba(171, 196, 255, 1);
-}
-
-QPushButton:hover{
-	background-color: rgb(163, 187, 243);
-}*/</string>
-               </property>
-               <property name="locale">
-                <locale language="English" country="Canada"/>
-               </property>
-               <property name="text">
-                <string>B</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="6">
-              <widget class="QFontComboBox" name="changeFontButton">
-               <property name="minimumSize">
-                <size>
-                 <width>81</width>
+                 <width>0</width>
                  <height>45</height>
                 </size>
                </property>
@@ -668,93 +893,11 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item row="0" column="4">
-              <widget class="QPushButton" name="underlineButton">
-               <property name="minimumSize">
-                <size>
-                 <width>45</width>
-                 <height>45</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>45</width>
-                 <height>45</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Goudy Old Style</family>
-                 <pointsize>11</pointsize>
-                 <underline>true</underline>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Underline</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">/*QPushButton{
-	background-color: rgba(171, 196, 255, 1);
-}
-
-QPushButton:hover{
-	background-color: rgb(163, 187, 243);
-}*/</string>
-               </property>
-               <property name="locale">
-                <locale language="English" country="Canada"/>
-               </property>
-               <property name="text">
-                <string>U</string>
-               </property>
-              </widget>
-             </item>
              <item row="0" column="3">
-              <widget class="QPushButton" name="italicButton">
+              <widget class="QFontComboBox" name="changeFontButton">
                <property name="minimumSize">
                 <size>
-                 <width>45</width>
-                 <height>45</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>45</width>
-                 <height>45</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Goudy Old Style</family>
-                 <pointsize>11</pointsize>
-                 <italic>true</italic>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Italic</string>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">/*QPushButton{
-	background-color: rgba(171, 196, 255, 1);
-}
-
-QPushButton:hover{
-	background-color: rgb(163, 187, 243);
-}*/</string>
-               </property>
-               <property name="locale">
-                <locale language="English" country="Canada"/>
-               </property>
-               <property name="text">
-                <string>I</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="7">
-              <widget class="QComboBox" name="changeFontSizeButton">
-               <property name="minimumSize">
-                <size>
-                 <width>81</width>
+                 <width>0</width>
                  <height>45</height>
                 </size>
                </property>
@@ -831,7 +974,7 @@ QPushButton:hover{
                <x>0</x>
                <y>0</y>
                <width>1082</width>
-               <height>627</height>
+               <height>713</height>
               </rect>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout">
@@ -859,7 +1002,65 @@ QPushButton:hover{
                  </font>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: rgb(221, 221, 221);</string>
+                 <string notr="true">*{
+	background-color: rgb(221, 221, 221);
+}
+
+QScrollBar:vertical {
+	background-color: rgb(29, 29, 29);
+    width: 15px;
+    margin: 15px 3px 15px 3px;
+    border: 1px transparent #2A2929;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(57, 192, 254);
+    min-height: 7px;
+    border-radius: 4px;
+}
+
+QScrollBar::sub-line:vertical {
+    margin: 3px 0px 3px 0px;
+    border-image: url(:/dark_blue/img/up_arrow_disabled.png);
+    height: 0px;
+    width: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical {
+	border-image: url(:/dark_blue/img/down_arrow_disabled.png);
+    margin: 3px 0px 3px 0px;
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover, QScrollBar::sub-line:vertical:on {
+    border-image: url(:/dark_blue/img/up_arrow.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on {
+    border-image: url(:/dark_blue/img/down_arrow.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
                 </property>
                 <property name="locale">
                  <locale language="English" country="Canada"/>
@@ -868,231 +1069,6 @@ QPushButton:hover{
               </item>
              </layout>
             </widget>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item alignment="Qt::AlignLeft">
-        <widget class="QFrame" name="quick_access_frame">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>95</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="locale">
-          <locale language="English" country="Canada"/>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Plain</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <property name="spacing">
-           <number>25</number>
-          </property>
-          <property name="leftMargin">
-           <number>5</number>
-          </property>
-          <property name="topMargin">
-           <number>10</number>
-          </property>
-          <property name="rightMargin">
-           <number>5</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QLabel" name="label">
-            <property name="font">
-             <font>
-              <family>Goudy Old Style</family>
-              <pointsize>11</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(217, 217, 217);</string>
-            </property>
-            <property name="locale">
-             <locale language="English" country="Canada"/>
-            </property>
-            <property name="text">
-             <string>Quick Access</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>65</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>65</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton{
-	background-color: rgb(30, 30, 30);
-	color: rgb(217, 217, 217);
-	border-radius: 11px;
-}
-
-QPushButton:hover{
-    border: 1px solid #3775f4;
-	background-color: rgb(25, 25, 25);
-}</string>
-            </property>
-            <property name="locale">
-             <locale language="English" country="Canada"/>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Plain</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="spacing">
-              <number>15</number>
-             </property>
-             <property name="leftMargin">
-              <number>3</number>
-             </property>
-             <property name="topMargin">
-              <number>3</number>
-             </property>
-             <property name="rightMargin">
-              <number>3</number>
-             </property>
-             <property name="bottomMargin">
-              <number>3</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="undoButton">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Goudy Old Style</family>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Undo</string>
-               </property>
-               <property name="locale">
-                <locale language="English" country="Canada"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../Images/Buttons/undo.png</normaloff>../Images/Buttons/undo.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="shareButton">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Goudy Old Style</family>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Share</string>
-               </property>
-               <property name="locale">
-                <locale language="English" country="Canada"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../Images/Buttons/share.png</normaloff>../Images/Buttons/share.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="redoButton">
-               <property name="minimumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>55</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Goudy Old Style</family>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Redo</string>
-               </property>
-               <property name="locale">
-                <locale language="English" country="Canada"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../Images/Buttons/redo.png</normaloff>../Images/Buttons/redo.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>20</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </widget>
-             </item>
-            </layout>
            </widget>
           </item>
          </layout>
