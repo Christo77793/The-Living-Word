@@ -25,6 +25,7 @@ class NotesWindow(Qtw.QMainWindow):
         self.setWindowFlag(Qtc.Qt.FramelessWindowHint)  # removes standard title
         self.show()  # show the UI
         self.showMaximized()  # loads the app in full-screen
+        self.shareButton.hide()  # temporarily hiding till share function implemented
 
         # Window Manipulation Buttons
 
