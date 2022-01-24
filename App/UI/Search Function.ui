@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>897</width>
+    <height>634</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="Canada"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="locale">
+      <locale language="English" country="Canada"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="title_frame">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>65</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">#title_frame{
+	background-color: rgb(29, 29, 29);
+}</string>
+        </property>
+        <property name="locale">
+         <locale language="English" country="Canada"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>11</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item alignment="Qt::AlignLeft">
+          <widget class="QLabel" name="app_title">
+           <property name="font">
+            <font>
+             <family>Modern No. 20</family>
+             <pointsize>15</pointsize>
+             <italic>false</italic>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255)</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="text">
+            <string>Search</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item alignment="Qt::AlignRight|Qt::AlignTop">
+          <widget class="QFrame" name="windowButtons_frame">
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	border-radius: 100px;
+}
+
+QPushButton:hover{
+	background-color: rgb(35, 35, 35);
+}</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="minimiseButton">
+              <property name="minimumSize">
+               <size>
+                <width>55</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Images/Buttons/minimise.png</normaloff>../Images/Buttons/minimise.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="restoreButton">
+              <property name="minimumSize">
+               <size>
+                <width>55</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Images/Buttons/restore.png</normaloff>../Images/Buttons/restore.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="closeButton">
+              <property name="minimumSize">
+               <size>
+                <width>55</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover{
+	background-color: rgb(255, 0, 0);
+}</string>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Images/Buttons/close.png</normaloff>../Images/Buttons/close.png</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="central_frame">
+        <property name="styleSheet">
+         <string notr="true">#central_frame{
+	background-color: rgb(43, 43, 43);
+}
+
+QWidget#scrollAreaWidgetContents{
+	background-color: rgb(77, 77, 77);
+}
+
+QScrollBar:vertical {
+	background-color: rgb(29, 29, 29);
+    width: 15px;
+    margin: 15px 3px 15px 3px;
+    border: 1px transparent #2A2929;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+	background-color: rgb(57, 192, 254);
+    min-height: 5px;
+    border-radius: 4px;
+}
+
+QScrollBar::sub-line:vertical {
+    margin: 3px 0px 3px 0px;
+    border-image: url(:/dark_blue/img/up_arrow_disabled.png);
+    height: 0px;
+    width: 0px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical {
+	border-image: url(:/dark_blue/img/down_arrow_disabled.png);
+    margin: 3px 0px 3px 0px;
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover, QScrollBar::sub-line:vertical:on {
+    border-image: url(:/dark_blue/img/up_arrow.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on {
+    border-image: url(:/dark_blue/img/down_arrow.png);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}</string>
+        </property>
+        <property name="locale">
+         <locale language="English" country="Canada"/>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="search_box_frame">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 11px;
+}
+
+QPushButton:hover {
+    border: 1px solid #3775f4;
+	background-color: rgb(35, 35, 35);
+}
+
+QLineEdit {
+	background-color: rgb(77, 77, 77);
+	color: rgb(217, 217, 217);
+    border: 1px solid #3A3939;
+    border-radius: 5px;
+}
+
+QLineEdit:hover {
+	border: 1px solid #3775f4;
+	color: rgb(217, 217, 217);
+}</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>11</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>5</number>
+            </property>
+            <item>
+             <widget class="QLineEdit" name="userInput">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>35</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="placeholderText">
+               <string>Enter the word(s) to search for</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="searchButton">
+              <property name="minimumSize">
+               <size>
+                <width>45</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>45</width>
+                <height>45</height>
+               </size>
+              </property>
+              <property name="locale">
+               <locale language="English" country="Canada"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normaloff>../Images/Buttons/search-word.png</normaloff>../Images/Buttons/search-word.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>55</width>
+                <height>55</height>
+               </size>
+              </property>
+              <property name="shortcut">
+               <string>Return</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="versesReturnedCount">
+           <property name="font">
+            <font>
+             <family>Footlight MT Light</family>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="text">
+            <string>Count:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QScrollArea" name="scrollArea">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="locale">
+            <locale language="English" country="Canada"/>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOff</enum>
+           </property>
+           <property name="widgetResizable">
+            <bool>true</bool>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>875</width>
+              <height>439</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>7</number>
+             </property>
+             <property name="topMargin">
+              <number>7</number>
+             </property>
+             <property name="rightMargin">
+              <number>7</number>
+             </property>
+             <property name="bottomMargin">
+              <number>7</number>
+             </property>
+             <item alignment="Qt::AlignTop">
+              <widget class="QLabel" name="versesReturned">
+               <property name="font">
+                <font>
+                 <family>MS Shell Dlg 2</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(217, 217, 217);</string>
+               </property>
+               <property name="locale">
+                <locale language="English" country="Canada"/>
+               </property>
+               <property name="text">
+                <string>--Searched verses returned--</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::TextSelectableByMouse</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
