@@ -31,11 +31,11 @@ def add_bookmark_to_database(book_name, chapter_number, verse_number, verse_text
     '''
     Function to add a bookmark to the database file
 
-    :param: book_name -> Book Name
-    :param: chapter_number -> Chapter Number
-    :param: verse_number -> Verse Number
-    :param: verse_text -> Verse Text
-    :param: translation_name -> Translation Name
+    :parameter: book_name -> Book Name
+    :parameter: chapter_number -> Chapter Number
+    :parameter: verse_number -> Verse Number
+    :parameter: verse_text -> Verse Text
+    :parameter: translation_name -> Translation Name
     '''
 
     conn = sqlite3.connect(BM_DB_LOCATION)

@@ -70,8 +70,8 @@ class SearchVerses(Qtw.QWidget):
     def search_verses(self):
 
         if self.userInput.text() == "" or self.userInput.text().isspace():
+            # skip the function if the input is either empty or just white-space
             pass
-            print("Nothing")
 
         else:
             user_input = self.userInput.text()
@@ -84,21 +84,33 @@ class SearchVerses(Qtw.QWidget):
             for verse in verses:
 
                 main_string = verse[4]
+                # since Qt widgets use rich HTML text we can use HTML to highlight text
+                # the text variables are used to indicate the start and end of a tag
                 text1 = "<mark style='background-color: #3775f4'>"
                 text2 = "</mark>"
 
+                # This shows all search results regardless of uppercase/lowercase characters
+
+                # Converting user input to lowercase to avoid conflicts of not found uppercase/lowercase characters
                 temp_string = main_string.lower()
                 temp_input = user_input.lower()
-                index = temp_string.index(temp_input)
+                index = temp_string.index(temp_input)  # Setting index to the first result of the search
 
+                '''Final string will contain 
+                1. first set of words (if any) till the searched word
+                2. the start of the mark tag
+                3. user searched word
+                4. the end of the mark tag
+                5. remaining set of words (if any) after the searched word
+                '''
                 final_string = main_string[:index] + text1 + main_string[index: index + len(user_input)] + text2 + main_string[index + len(user_input):]
 
                 for book_name in book_list:
                     if verse[1] == book_name[0]:
+                        # final output formatting
 
                         if temp_counter == number_of_verses:
                             temp_verses += f"<mark style='color: #3775f4'>{temp_counter}</mark>. {book_name[1]} {verse[2]}:{verse[3]} - {final_string}"
-                            print("Reached Last Line")
 
                         else:
                             temp_verses += f"<mark style='color: #3775f4'>{temp_counter}</mark>. {book_name[1]} {verse[2]}:{verse[3]} - {final_string}<br /><br />"
