@@ -1,6 +1,6 @@
 # The Living Word
 
-This app can show all the verses of the Bible, from the KJV, ASV, BBE, WBT, YLT, and DARBY translations.
+This app can show all the verses of the Bible, from the KJV, ASV, BBE, WBT, YLT, and DARBY translations. This is by far my most invested passion project and I believe showcases my knowledge in Python and SQL.
 
 
 **Reader**:
